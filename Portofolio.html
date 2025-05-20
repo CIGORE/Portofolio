@@ -1,991 +1,249 @@
 <!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mie Padeh - Sensasi Pedas Nusantara</title>
+    <meta name="description" content="Portofolio Developer - Pengembang Web Full-Stack & Problem Solver">
+    <meta name="keywords" content="developer, programmer, web development, portfolio, full-stack">
+    <title>Portofolio Developer</title>
+    <title>Undangan Pernikahan Adam & Hawa</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
+@@ -15,1107 +13,735 @@
                 extend: {
                     colors: {
-                        brand: {
-                            red: '#E02D19',
-                            orange: '#FF8C00',
-                            black: '#1A1A1A',
+                        primary: '#5D5CDE',
+                        secondary: '#6EE7B7',
+                        dark: {
+                            bg: '#181818',
+                            card: '#262626',
+                            text: '#E5E7EB'
+                        },
+                        light: {
+                            bg: '#FFFFFF',
+                            card: '#F3F4F6',
+                            text: '#1F2937'
                         }
+                        secondary: '#F9F2ED',
+                        accent: '#E9B384',
+                        gold: '#D4AF37',
+                        softblue: '#E0E7FF',
+                        darkblue: '#312E81'
                     },
                     fontFamily: {
-                        'sans': ['Poppins', 'sans-serif'],
-                        'serif': ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'Roboto', 'sans-serif']
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        script: ['Great Vibes', 'cursive']
                     },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-in-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
                     backgroundImage: {
-                        'batik-pattern': "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIiBvcGFjaXR5PSIwLjA1Ij48cGF0aCBkPSJNMzAgMTVjLTguMjg0IDAtMTUgNi43MTYtMTUgMTVzNi43MTYgMTUgMTUgMTVjOC4yODQgMCAxNS02LjcxNiAxNS0xNXMtNi43MTYtMTUtMTUtMTV6TTYuMjEzIDM4Ljc4N2MtOC4yODQgMC0xNSA2LjcxNi0xNSAxNXM2LjcxNiAxNSAxNSAxNWM4LjI4NCAwIDE1LTYuNzE2IDE1LTE1cy02LjcxNi0xNS0xNS0xNXptNDcuNTc0IDBjLTguMjg0IDAtMTUgNi43MTYtMTUgMTVzNi43MTYgMTUgMTUgMTVjOC4yODQgMCAxNS02LjcxNiAxNS0xNXMtNi43MTYtMTUtMTUtMTV6TTMwLTkuNzg3Yy04LjI4NCAwLTE1IDYuNzE2LTE1IDE1czYuNzE2IDE1IDE1IDE1YzguMjg0IDAgMTUtNi43MTYgMTUtMTVzLTYuNzE2LTE1LTE1LTE1eiIgZmlsbD0iIzAwMCIvPjwvc3ZnPg==')",
+                        'floral-pattern': "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48ZGVmcz48L2RlZnM+PHBhdGggZD0iTTMwLDMzLjVjLTEuOTMsMC0zLjUtMS41Ny0zLjUtMy41czEuNTctMy41LDMuNS0zLjVzMy41LDEuNTcsMy41LDMuNVMzMS45MywzMy41LDMwLDMzLjV6TTYwLDMzLjVjLTEuOTMsMC0zLjUtMS41Ny0zLjUtMy41czEuNTctMy41LDMuNS0zLjVzMy41LDEuNTcsMy41LDMuNVM2MS45MywzMy41LDYwLDMzLjV6IE0wLDMzLjVjLTEuOTMsMC0zLjUtMS41Ny0zLjUtMy41czEuNTctMy41LDMuNS0zLjVzMy41LDEuNTcsMy41LDMuNVMxLjkzLDMzLjUsMCwzMy41eiBNMzAsMy41Yy0xLjkzLDAtMy41LTEuNTctMy41LTMuNVMyOC4wNy0zLjUsMzAtMy41czMuNSwxLjU3LDMuNSwzLjVTMzEuOTMsMy41LDMwLDMuNXogTTMwLDYzLjVjLTEuOTMsMC0zLjUtMS41Ny0zLjUtMy41czEuNTctMy41LDMuNS0zLjVzMy41LDEuNTcsMy41LDMuNVMzMS45Myw2My41LDMwLDYzLjV6Ij48cGF0aCBmaWxsPSJyZ2JhKDE4MSwyMjAsMjUxLDAuMikiIGQ9Ik0zMCwzMy41Yy0xLjkzLDAtMy41LTEuNTctMy41LTMuNXMxLjU3LTMuNSwzLjUtMy41czMuNSwxLjU3LDMuNSwzLjVTMzEuOTMsMzMuNSwzMCwzMy41ek02MCwzMy41Yy0xLjkzLDAtMy41LTEuNTctMy41LTMuNXMxLjU3LTMuNSwzLjUtMy41czMuNSwxLjU3LDMuNSwzLjVTNjEuOTMsMzMuNSw2MCwzMy41eiBNMCwzMy41Yy0xLjkzLDAtMy41LTEuNTctMy41LTMuNXMxLjU3LTMuNSwzLjUtMy41czMuNSwxLjU3LDMuNSwzLjVTMS45MywzMy41LDAsMzMuNXogTTMwLDMuNWMtMS45MywwLTMuNS0xLjU3LTMuNS0zLjVTMjguMDctMy41LDMwLTMuNXMzLjUsMS41NywzLjUsMy41UzMxLjkzLDMuNSwzMCwzLjV6IE0zMCw2My41Yy0xLjkzLDAtMy41LTEuNTctMy41LTMuNXMxLjU3LTMuNSwzLjUtMy41czMuNSwxLjU3LDMuNSwzLjVTMzEuOTMsNjMuNSwzMCw2My41eiI+PC9wYXRoPjwvc3ZnPg==')",
                     }
                 }
             }
-        };
+        }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
-        
-        /* Custom Scroll Bar */
-        ::-webkit-scrollbar {
-            width: 8px;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+
+        .progress-bar {
             height: 8px;
+            width: 100%;
+            background-color: #E5E7EB;
+            border-radius: 4px;
+            overflow: hidden;
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #5D5CDE;
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        .scroll-section {
+            scroll-margin-top: 80px;
         }
         
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+        .dark .progress-bar {
+            background-color: #374151;
+
+        .ornament {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            opacity: 0.1;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            pointer-events: none;
         }
-        
-        ::-webkit-scrollbar-thumb {
-            background: #FF8C00;
-            border-radius: 10px;
+
+        .timeline-item {
+        .flower {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235D5CDE'%3E%3Cpath d='M12,21.5C8.97,21.5,6.5,19.03,6.5,16c0-1.95,1.05-3.76,2.75-4.74c-1.7-0.98-2.75-2.79-2.75-4.74c0-3.03,2.47-5.5,5.5-5.5 s5.5,2.47,5.5,5.5c0,1.95-1.05,3.76-2.75,4.74c1.7,0.98,2.75,2.79,2.75,4.74C17.5,19.03,15.03,21.5,12,21.5z M12,3 c-1.93,0-3.5,1.57-3.5,3.5S10.07,10,12,10s3.5-1.57,3.5-3.5S13.93,3,12,3z'%3E%3C/path%3E%3C/svg%3E");
         }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: #E02D19;
-        }
-        
-        /* Custom styles */
-        .batik-border {
+
+        .floral-divider {
             position: relative;
+            padding-left: 28px;
+            padding-bottom: 32px;
+            text-align: center;
+            padding: 20px 0;
         }
         
-        .batik-border::before {
+        .timeline-item::before {
+            content: "";
+
+        .floral-divider::before, 
+        .floral-divider::after {
             content: '';
             position: absolute;
-            top: 0;
             left: 0;
-            right: 0;
-            height: 8px;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDMwMCA4Ij48cGF0aCBkPSJNMCAwTDQgNEw4IDBMMTIgNEwxNiAwTDIwIDRMMjQgMEwyOCA0TDMyIDBMMzYgNEw0MCAwTDQ0IDRMNDggMEw1MiA0TDU2IDBMNjAgNEw2NCAwTDY4IDRMNzIgMEw3NiA0TDgwIDBMODQgNEw4OCAwTDkyIDRMOTYgMEwxMDAgNEwxMDQgMEwxMDggNEwxMTIgMEwxMTYgNEwxMjAgMEwxMjQgNEwxMjggMEwxMzIgNEwxMzYgMEwxNDAgNEwxNDQgMEwxNDggNEwxNTIgMEwxNTYgNEwxNjAgMEwxNjQgNEwxNjggMEwxNzIgNEwxNzYgMEwxODAgNEwxODQgMEwxODggNEwxOTIgMEwxOTYgNEwyMDAgMEwyMDQgNEwyMDggMEwyMTIgNEwyMTYgMEwyMjAgNEwyMjQgMEwyMjggNEwyMzIgMEwyMzYgNEwyNDAgMEwyNDQgNEwyNDggMEwyNTIgNEwyNTYgMEwyNjAgNEwyNjQgMEwyNjggNEwyNzIgMEwyNzYgNEwyODAgMEwyODQgNEwyODggMEwyOTIgNEwyOTYgMEwzMDAgNCIgc3Ryb2tlPSIjRTAyRDE5IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48L3N2Zz4=');
-            background-repeat: repeat-x;
+            top: 4px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #5D5CDE;
+            top: 50%;
+            width: 100px;
+            height: 2px;
+            background: #5D5CDE;
+            opacity: 0.3;
         }
         
-        .heat-level {
-            position: relative;
-            height: 10px;
-            background-color: #f3f4f6;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        
-        .heat-indicator {
-            height: 100%;
-            background: linear-gradient(90deg, #FFD700, #FF8C00, #E02D19);
-        }
-        
-        .spicy-badge {
+        .timeline-item::after {
+            content: "";
             position: absolute;
-            top: -10px;
-            right: 10px;
-            transform: rotate(15deg);
+            left: 7px;
+            top: 20px;
+            bottom: 0;
+            width: 2px;
+            background-color: #5D5CDE;
+
+        .floral-divider::before {
+            right: 55%;
+            margin-right: 15px;
+        }
+
+        .floral-divider::after {
+            left: 55%;
+            margin-left: 15px;
+        }
+
+        .envelope {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        .envelope:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .gallery-img {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        .gallery-img:hover {
+            transform: scale(1.05) rotate(2deg);
             z-index: 10;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        /* Dark mode styles */
-        .dark body {
-            background-color: #121212;
-            color: #e5e5e5;
-        }
-        
-        .dark .shadow-custom {
-            box-shadow: 0 4px 20px rgba(255, 140, 0, 0.15);
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
 
-        /* Card hover effects */
-        .product-card {
+        .float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Shine Animation */
+        @keyframes shine {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        .shine {
+            animation: shine 3s ease-in-out infinite;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        .dark .dark\:text-white {
+            color: white;
+        }
+
+        .hero-pattern {
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%235D5CDE' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .bank-card {
             transition: all 0.3s ease;
         }
-        
-        .product-card:hover {
+
+        /* GitHub contributions chart */
+        .contribution-graph {
+            display: grid;
+            grid-template-columns: repeat(52, 1fr);
+            gap: 3px;
+            margin-top: 10px;
+        .bank-card:hover {
             transform: translateY(-5px);
         }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+
+        .contribution-cell {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            transition: transform 0.2s;
+        .copy-button {
+            transition: all 0.2s ease;
         }
-        
-        .animate-fade-in {
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        
-        .shimmer {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .shimmer::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                to right,
-                rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0.3) 50%,
-                rgba(255, 255, 255, 0) 100%
-            );
-            transform: rotate(30deg);
-            animation: shimmer 3s infinite;
-        }
-        
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) rotate(30deg); }
-            100% { transform: translateX(100%) rotate(30deg); }
+
+        .contribution-cell:hover {
+            transform: scale(1.2);
+        .copy-button:active {
+            transform: scale(0.95);
         }
     </style>
 </head>
-<body class="font-sans overflow-x-hidden bg-white dark:bg-brand-black">
-    <!-- Navbar -->
-    <nav class="sticky top-0 z-50 bg-white dark:bg-brand-black shadow-md transition-all duration-300">
-        <div class="container mx-auto px-4 md:px-6 py-3">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center">
-                    <a href="#" class="flex items-center">
-                        <span class="text-brand-red font-bold text-2xl md:text-3xl font-serif">Mie</span>
-                        <span class="text-brand-orange font-bold text-2xl md:text-3xl font-serif ml-1">Padeh</span>
-                    </a>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="#story" class="text-brand-black dark:text-white hover:text-brand-red transition-colors">Cerita Kami</a>
-                    <a href="#products" class="text-brand-black dark:text-white hover:text-brand-red transition-colors">Produk</a>
-                    <a href="#gallery" class="text-brand-black dark:text-white hover:text-brand-red transition-colors">Galeri</a>
-                    <a href="#testimonials" class="text-brand-black dark:text-white hover:text-brand-red transition-colors">Testimoni</a>
-                    <a href="#blog" class="text-brand-black dark:text-white hover:text-brand-red transition-colors">Blog</a>
-                    <a href="#contact" class="text-brand-black dark:text-white hover:text-brand-red transition-colors">Kontak</a>
-                </div>
-                
-                <div class="flex items-center">
-                    <button id="orderNowBtn" class="hidden md:block bg-brand-red hover:bg-red-700 text-white py-2 px-6 rounded-full transition-all transform hover:scale-105">
-                        Order Sekarang
-                    </button>
-                    <button id="toggleMenu" class="md:hidden text-brand-black dark:text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="md:hidden hidden animate-fade-in">
-                <div class="flex flex-col space-y-4 mt-4 pb-4">
-                    <a href="#story" class="text-brand-black dark:text-white hover:text-brand-red transition-colors">Cerita Kami</a>
-                    <a href="#products" class="text-brand-black dark:text-white hover:text-brand-red transition-colors">Produk</a>
-                    <a href="#gallery" class="text-brand-black dark:text-white hover:text-brand-red transition-colors">Galeri</a>
-                    <a href="#testimonials" class="text-brand-black dark:text-white hover:text-brand-red transition-colors">Testimoni</a>
-                    <a href="#blog" class="text-brand-black dark:text-white hover:text-brand-red transition-colors">Blog</a>
-                    <a href="#contact" class="text-brand-black dark:text-white hover:text-brand-red transition-colors">Kontak</a>
-                    <button class="bg-brand-red hover:bg-red-700 text-white py-2 px-6 rounded-full transition-all transform hover:scale-105 w-full">
-                        Order Sekarang
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="relative batik-border overflow-hidden">
-        <div class="relative bg-gradient-to-r from-brand-black to-brand-red h-[85vh] flex items-center">
-            <div class="absolute inset-0 bg-batik-pattern opacity-10"></div>
-            <div class="container mx-auto px-4 md:px-6 z-10">
-                <div class="max-w-2xl">
-                    <h2 class="text-white text-2xl font-medium mb-2">Sensasi Pedas Autentik</h2>
-                    <h1 class="text-4xl md:text-6xl font-bold text-brand-orange font-serif mb-4">Mie Padeh</h1>
-                    <p class="text-white text-lg mb-8">Pengalaman kuliner pedas khas Nusantara yang memadukan keaslian rempah tradisional dengan sentuhan modern yang menggugah selera.</p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <button id="heroOrderBtn" class="bg-brand-orange hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg">
-                            Pesan Sekarang
-                        </button>
-                        <button class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-brand-red transition-all">
-                            Lihat Menu
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Decorative Noodle Bowl Image -->
-            <div class="absolute right-0 bottom-0 w-1/2 h-full hidden lg:block overflow-hidden">
-                <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-brand-orange rounded-full opacity-20"></div>
-                <div class="absolute bottom-[-5%] right-[-5%] w-[500px] h-[500px] bg-brand-red rounded-full opacity-30"></div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Brand Story Section -->
-    <section id="story" class="py-16 md:py-24 bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="order-2 lg:order-1">
-                    <div class="relative">
-                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-orange opacity-20 rounded-full"></div>
-                        <div class="w-full h-64 md:h-96 bg-gradient-to-br from-brand-red to-brand-orange rounded-lg relative overflow-hidden shadow-xl">
-                            <!-- Decorative image representation -->
-                            <div class="absolute inset-0 flex items-center justify-center text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 opacity-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                </svg>
-                            </div>
-                            <div class="absolute inset-0 bg-batik-pattern opacity-10"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 lg:order-2">
-                    <h2 class="text-brand-orange text-lg font-medium mb-2">Cerita Brand</h2>
-                    <h3 class="text-3xl md:text-4xl font-bold font-serif text-brand-black dark:text-white mb-6">Dari Warisan Leluhur hingga Dapur Modern</h3>
-                    <p class="text-gray-700 dark:text-gray-300 mb-4">Perjalanan Mie Padeh bermula dari warisan resep turun-temurun keluarga Minang yang telah berevolusi selama tiga generasi. Bermula dari sebuah warung kecil di kaki Gunung Singgalang, Padang, Sumatera Barat.</p>
-                    <p class="text-gray-700 dark:text-gray-300 mb-6">Mie Padeh menggabungkan kekayaan rempah nusantara dengan teknik memasak modern untuk menciptakan cita rasa pedas yang khas, harmonis, dan berkarakter kuat. Kami telah meneliti dan mengembangkan resep selama bertahun-tahun untuk mencapai keseimbangan sempurna antara pedas, gurih, dan aromatis.</p>
-                    <div class="flex items-center">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIHN0cm9rZT0iI0UwMkQxOSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+PHRleHQgeD0iMzAiIHk9IjM4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiIGZpbGw9IiNFMDJEMTkiPk1QPC90ZXh0Pjwvc3ZnPg==" alt="Logo" class="w-12 h-12">
-                        <div class="ml-4">
-                            <p class="font-serif font-bold text-brand-black dark:text-white">Chef Rini Suryatmi</p>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Pendiri & Master Chef</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
-        <div class="absolute inset-0 bg-batik-pattern opacity-5"></div>
-        <div class="container mx-auto px-4 md:px-6 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-brand-orange text-lg font-medium mb-2">Produk Unggulan</h2>
-                <h3 class="text-3xl md:text-4xl font-bold font-serif text-brand-black dark:text-white mb-4">Varian Mie Padeh</h3>
-                <p class="text-gray-700 dark:text-gray-300">Dari tingkat pedas yang lembut hingga pedas ekstrem, setiap varian Mie Padeh menawarkan pengalaman kuliner yang berbeda.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Product 1 -->
-                <div class="product-card bg-white dark:bg-gray-900 rounded-xl shadow-md dark:shadow-custom overflow-hidden relative">
-                    <div class="spicy-badge bg-brand-orange text-white text-xs font-bold px-2 py-1 rounded">BEST SELLER</div>
-                    <div class="h-48 bg-gradient-to-br from-yellow-200 to-brand-orange flex items-center justify-center p-6">
-                        <div class="w-32 h-32 rounded-full bg-white dark:bg-gray-900 flex items-center justify-center shadow-lg relative overflow-hidden shimmer">
-                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 text-brand-orange">
-                                <circle cx="50" cy="50" r="45" fill="currentColor" fill-opacity="0.2"/>
-                                <path d="M30,35 C45,25 55,25 70,35 S85,50 70,65 S45,75 30,65 S15,45 30,35" fill="currentColor"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <h4 class="text-xl font-bold text-brand-black dark:text-white">Mie Padeh Original</h4>
-                            <span class="text-brand-red font-bold">Rp 25.000</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Mie pedas klasik dengan kuah kaya rempah dan topping daging sapi cincang khas Minang.</p>
-                        <div class="mb-4">
-                            <div class="flex items-center justify-between mb-1">
-                                <span class="text-xs text-gray-500 dark:text-gray-400">Tingkat Kepedasan</span>
-                                <span class="text-xs font-bold text-brand-red">Medium</span>
-                            </div>
-                            <div class="heat-level">
-                                <div class="heat-indicator" style="width: 50%"></div>
-                            </div>
-                        </div>
-                        <button class="w-full py-2 bg-brand-orange hover:bg-amber-600 text-white rounded-lg transition-all transform hover:scale-105">
-                            Pesan Sekarang
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Product 2 -->
-                <div class="product-card bg-white dark:bg-gray-900 rounded-xl shadow-md dark:shadow-custom overflow-hidden relative">
-                    <div class="h-48 bg-gradient-to-br from-red-200 to-brand-red flex items-center justify-center p-6">
-                        <div class="w-32 h-32 rounded-full bg-white dark:bg-gray-900 flex items-center justify-center shadow-lg relative overflow-hidden shimmer">
-                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 text-brand-red">
-                                <circle cx="50" cy="50" r="45" fill="currentColor" fill-opacity="0.2"/>
-                                <path d="M30,35 C45,25 55,25 70,35 S85,50 70,65 S45,75 30,65 S15,45 30,35" fill="currentColor"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <h4 class="text-xl font-bold text-brand-black dark:text-white">Mie Padeh Api</h4>
-                            <span class="text-brand-red font-bold">Rp 28.000</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Versi super pedas dengan campuran 7 cabai berbeda dan tambahan jeruk nipis untuk menyegarkan.</p>
-                        <div class="mb-4">
-                            <div class="flex items-center justify-between mb-1">
-                                <span class="text-xs text-gray-500 dark:text-gray-400">Tingkat Kepedasan</span>
-                                <span class="text-xs font-bold text-brand-red">Ekstrem</span>
-                            </div>
-                            <div class="heat-level">
-                                <div class="heat-indicator" style="width: 100%"></div>
-                            </div>
-                        </div>
-                        <button class="w-full py-2 bg-brand-orange hover:bg-amber-600 text-white rounded-lg transition-all transform hover:scale-105">
-                            Pesan Sekarang
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="product-card bg-white dark:bg-gray-900 rounded-xl shadow-md dark:shadow-custom overflow-hidden relative">
-                    <div class="h-48 bg-gradient-to-br from-green-200 to-green-500 flex items-center justify-center p-6">
-                        <div class="w-32 h-32 rounded-full bg-white dark:bg-gray-900 flex items-center justify-center shadow-lg relative overflow-hidden shimmer">
-                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 text-green-500">
-                                <circle cx="50" cy="50" r="45" fill="currentColor" fill-opacity="0.2"/>
-                                <path d="M30,35 C45,25 55,25 70,35 S85,50 70,65 S45,75 30,65 S15,45 30,35" fill="currentColor"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <h4 class="text-xl font-bold text-brand-black dark:text-white">Mie Padeh Hijau</h4>
-                            <span class="text-brand-red font-bold">Rp 30.000</span>
-                        </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Mie dengan campuran daun kelor dan cabai hijau segar, disajikan dengan kuah santan.</p>
-                        <div class="mb-4">
-                            <div class="flex items-center justify-between mb-1">
-                                <span class="text-xs text-gray-500 dark:text-gray-400">Tingkat Kepedasan</span>
-                                <span class="text-xs font-bold text-brand-red">Mild</span>
-                            </div>
-                            <div class="heat-level">
-                                <div class="heat-indicator" style="width: 30%"></div>
-                            </div>
-                        </div>
-                        <button class="w-full py-2 bg-brand-orange hover:bg-amber-600 text-white rounded-lg transition-all transform hover:scale-105">
-                            Pesan Sekarang
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 text-center">
-                <button class="inline-flex items-center px-6 py-3 bg-transparent border border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full transition-colors">
-                    <span>Lihat Semua Produk</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-16 md:py-24 bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-brand-orange text-lg font-medium mb-2">Galeri Foto</h2>
-                <h3 class="text-3xl md:text-4xl font-bold font-serif text-brand-black dark:text-white mb-4">Mie yang Menggugah Selera</h3>
-                <p class="text-gray-700 dark:text-gray-300">Nikmati keindahan visual dari setiap mangkuk Mie Padeh yang kami sajikan.</p>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <!-- Gallery Image 1 -->
-                <div class="relative overflow-hidden rounded-lg group h-40 md:h-64 bg-brand-orange">
-                    <div class="absolute inset-0 bg-gradient-to-br from-yellow-400 to-brand-red opacity-40"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 19l9-11 9 11M5 7h14" />
-                        </svg>
-                    </div>
-                    <div class="absolute bottom-0 left-0 p-4 w-full bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                        <h4 class="text-white text-sm font-bold">Mie Padeh Original</h4>
-                        <p class="text-gray-300 text-xs">Disajikan dengan telur setengah matang</p>
-                    </div>
-                </div>
-                
-                <!-- Gallery Image 2 -->
-                <div class="relative overflow-hidden rounded-lg group h-40 md:h-64 bg-brand-red">
-                    <div class="absolute inset-0 bg-gradient-to-br from-red-400 to-brand-red opacity-40"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 19l9-11 9 11M5 7h14" />
-                        </svg>
-                    </div>
-                    <div class="absolute bottom-0 left-0 p-4 w-full bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                        <h4 class="text-white text-sm font-bold">Mie Padeh Api</h4>
-                        <p class="text-gray-300 text-xs">Dengan taburan cabai rawit segar</p>
-                    </div>
-                </div>
-                
-                <!-- Gallery Image 3 -->
-                <div class="relative overflow-hidden rounded-lg group h-40 md:h-64 bg-green-500">
-                    <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 opacity-40"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 19l9-11 9 11M5 7h14" />
-                        </svg>
-                    </div>
-                    <div class="absolute bottom-0 left-0 p-4 w-full bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                        <h4 class="text-white text-sm font-bold">Mie Padeh Hijau</h4>
-                        <p class="text-gray-300 text-xs">Disajikan dengan daun kemangi</p>
-                    </div>
-                </div>
-                
-                <!-- Gallery Image 4 -->
-                <div class="relative overflow-hidden rounded-lg group h-40 md:h-64 bg-amber-600">
-                    <div class="absolute inset-0 bg-gradient-to-br from-amber-400 to-amber-700 opacity-40"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 19l9-11 9 11M5 7h14" />
-                        </svg>
-                    </div>
-                    <div class="absolute bottom-0 left-0 p-4 w-full bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                        <h4 class="text-white text-sm font-bold">Mie Padeh Special</h4>
-                        <p class="text-gray-300 text-xs">Dengan topping lengkap</p>
-                    </div>
-                </div>
-                
-                <!-- Gallery Image 5 -->
-                <div class="relative overflow-hidden rounded-lg group h-40 md:h-64 bg-purple-500">
-                    <div class="absolute inset-0 bg-gradient-to-br from-purple-400 to-purple-700 opacity-40"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 19l9-11 9 11M5 7h14" />
-                        </svg>
-                    </div>
-                    <div class="absolute bottom-0 left-0 p-4 w-full bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                        <h4 class="text-white text-sm font-bold">Mie Padeh Ungu</h4>
-                        <p class="text-gray-300 text-xs">Dengan ekstrak ubi ungu</p>
-                    </div>
-                </div>
-                
-                <!-- Gallery Image 6 -->
-                <div class="relative overflow-hidden rounded-lg group h-40 md:h-64 bg-blue-500">
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-700 opacity-40"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 19l9-11 9 11M5 7h14" />
-                        </svg>
-                    </div>
-                    <div class="absolute bottom-0 left-0 p-4 w-full bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                        <h4 class="text-white text-sm font-bold">Mie Padeh Seafood</h4>
-                        <p class="text-gray-300 text-xs">Dengan tambahan udang dan cumi</p>
-                    </div>
-                </div>
-                
-                <!-- Gallery Image 7 -->
-                <div class="relative overflow-hidden rounded-lg group h-40 md:h-64 bg-gray-600">
-                    <div class="absolute inset-0 bg-gradient-to-br from-gray-500 to-gray-700 opacity-40"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 19l9-11 9 11M5 7h14" />
-                        </svg>
-                    </div>
-                    <div class="absolute bottom-0 left-0 p-4 w-full bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                        <h4 class="text-white text-sm font-bold">Mie Padeh Hitam</h4>
-                        <p class="text-gray-300 text-xs">Dengan tinta cumi asli</p>
-                    </div>
-                </div>
-                
-                <!-- Gallery Image 8 -->
-                <div class="relative overflow-hidden rounded-lg group h-40 md:h-64 bg-yellow-400">
-                    <div class="absolute inset-0 bg-gradient-to-br from-yellow-300 to-yellow-500 opacity-40"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 19l9-11 9 11M5 7h14" />
-                        </svg>
-                    </div>
-                    <div class="absolute bottom-0 left-0 p-4 w-full bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                        <h4 class="text-white text-sm font-bold">Mie Padeh Kuning</h4>
-                        <p class="text-gray-300 text-xs">Dengan kunyit dan kemiri</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
-        <div class="absolute inset-0 bg-batik-pattern opacity-5"></div>
-        <div class="container mx-auto px-4 md:px-6 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-brand-orange text-lg font-medium mb-2">Testimoni</h2>
-                <h3 class="text-3xl md:text-4xl font-bold font-serif text-brand-black dark:text-white mb-4">Apa Kata Pelanggan Kami</h3>
-                <p class="text-gray-700 dark:text-gray-300">Pengalaman pelanggan kami setelah menikmati sensasi Mie Padeh.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md dark:shadow-custom relative">
-                    <div class="absolute -top-5 right-5 text-brand-orange text-6xl opacity-10">"</div>
-                    <div class="mb-4">
-                        <div class="flex text-brand-orange">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 dark:text-gray-300 mb-6">"Sebagai pecinta kuliner pedas, Mie Padeh benar-benar memuaskan hasrat saya akan makanan pedas yang berkarakter. Campuran rempahnya pas dan tidak hanya sekedar pedas, tapi juga gurih dan aromatis."</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center text-white">
-                            <span class="font-bold">A</span>
-                        </div>
-                        <div class="ml-3">
-                            <h4 class="font-bold text-brand-black dark:text-white">Anita Wijaya</h4>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Food Blogger</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md dark:shadow-custom relative">
-                    <div class="absolute -top-5 right-5 text-brand-orange text-6xl opacity-10">"</div>
-                    <div class="mb-4">
-                        <div class="flex text-brand-orange">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 dark:text-gray-300 mb-6">"Mie Padeh Hijau menjadi favorit saya. Saya suka cara mereka menggabungkan cabai hijau dengan santan, memberikan rasa pedas yang lebih halus dan creamy. Layanan pengiriman mereka juga cepat dan ramah."</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 rounded-full bg-brand-red flex items-center justify-center text-white">
-                            <span class="font-bold">B</span>
-                        </div>
-                        <div class="ml-3">
-                            <h4 class="font-bold text-brand-black dark:text-white">Budi Santoso</h4>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Pelanggan Tetap</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md dark:shadow-custom relative">
-                    <div class="absolute -top-5 right-5 text-brand-orange text-6xl opacity-10">"</div>
-                    <div class="mb-4">
-                        <div class="flex text-brand-orange">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" opacity="0.3">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 dark:text-gray-300 mb-6">"Tantangan Mie Padeh Api benar-benar menguji batas toleransi pedas saya! Rasanya luar biasa, meski saya harus minum banyak air. Level kepedasannya konsisten dan packagingnya sangat informatif."</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white">
-                            <span class="font-bold">C</span>
-                        </div>
-                        <div class="ml-3">
-                            <h4 class="font-bold text-brand-black dark:text-white">Citra Dewi</h4>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Chef</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="py-16 md:py-24 bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-brand-orange text-lg font-medium mb-2">Blog</h2>
-                <h3 class="text-3xl md:text-4xl font-bold font-serif text-brand-black dark:text-white mb-4">Artikel & Inspirasi</h3>
-                <p class="text-gray-700 dark:text-gray-300">Tips dan wawasan seputar dunia kuliner pedas nusantara.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Blog Post 1 -->
-                <article class="bg-white dark:bg-gray-900 rounded-xl shadow-md dark:shadow-custom overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-red-200 to-brand-red flex items-center justify-center p-6 relative">
-                        <div class="absolute inset-0 bg-batik-pattern opacity-10"></div>
-                        <div class="relative z-10 text-white text-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-2 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                            </svg>
-                            <h5 class="font-medium">Tips & Trik</h5>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-xs text-gray-500 dark:text-gray-400">15 Juni 2023</span>
-                        <h4 class="text-xl font-bold text-brand-black dark:text-white mt-2 mb-3">5 Cara Menikmati Mie Pedas Tanpa Perut Meradang</h4>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Bagi para pecinta pedas, Mie Padeh bisa menjadi tantangan tersendiri. Simak tips dan trik untuk menikmati sensasi pedas maksimal tanpa menyiksa sistem pencernaan Anda.</p>
-                        <a href="#" class="inline-flex items-center text-brand-red hover:text-brand-orange transition-colors">
-                            <span>Baca Selengkapnya</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                    </div>
-                </article>
-                
-                <!-- Blog Post 2 -->
-                <article class="bg-white dark:bg-gray-900 rounded-xl shadow-md dark:shadow-custom overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-yellow-200 to-brand-orange flex items-center justify-center p-6 relative">
-                        <div class="absolute inset-0 bg-batik-pattern opacity-10"></div>
-                        <div class="relative z-10 text-white text-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-2 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
-                            </svg>
-                            <h5 class="font-medium">Budaya Kuliner</h5>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-xs text-gray-500 dark:text-gray-400">2 Juli 2023</span>
-                        <h4 class="text-xl font-bold text-brand-black dark:text-white mt-2 mb-3">Sejarah Kuliner Pedas di Nusantara: Dari Aceh sampai Papua</h4>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Menelusuri akar budaya pedas di Indonesia dan bagaimana cabai menjadi bagian tak terpisahkan dari identitas kuliner berbagai suku dan daerah di tanah air.</p>
-                        <a href="#" class="inline-flex items-center text-brand-red hover:text-brand-orange transition-colors">
-                            <span>Baca Selengkapnya</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                    </div>
-                </article>
-                
-                <!-- Blog Post 3 -->
-                <article class="bg-white dark:bg-gray-900 rounded-xl shadow-md dark:shadow-custom overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-green-200 to-green-500 flex items-center justify-center p-6 relative">
-                        <div class="absolute inset-0 bg-batik-pattern opacity-10"></div>
-                        <div class="relative z-10 text-white text-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-2 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                            </svg>
-                            <h5 class="font-medium">Inovasi Produk</h5>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-xs text-gray-500 dark:text-gray-400">18 Juli 2023</span>
-                        <h4 class="text-xl font-bold text-brand-black dark:text-white mt-2 mb-3">Masa Depan Mie Pedas: Tren dan Inovasi yang Patut Ditunggu</h4>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Eksplorasi terbaru dari tim R&D Mie Padeh dalam menciptakan varian rasa dan pengalaman baru, termasuk inovasi ramah lingkungan dan pilihan sehat.</p>
-                        <a href="#" class="inline-flex items-center text-brand-red hover:text-brand-orange transition-colors">
-                            <span>Baca Selengkapnya</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                    </div>
-                </article>
-            </div>
-            
-            <div class="mt-12 text-center">
-                <a href="#" class="inline-flex items-center px-6 py-3 bg-transparent border border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full transition-colors">
-                    <span>Lihat Semua Artikel</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Order CTA Section -->
-    <section class="py-16 md:py-24 bg-gradient-to-r from-brand-red to-brand-orange relative overflow-hidden">
-        <div class="absolute inset-0 bg-batik-pattern opacity-10"></div>
-        <div class="container mx-auto px-4 md:px-6 relative z-10">
-            <div class="max-w-4xl mx-auto text-center text-white">
-                <h2 class="text-3xl md:text-5xl font-bold font-serif mb-6">Rasakan Sendiri Sensasi Pedas Otentik Mie Padeh</h2>
-                <p class="text-lg md:text-xl mb-8 opacity-90">Tersedia untuk pengiriman ke seluruh Indonesia dengan kemasan khusus yang menjaga kualitas dan kesegaran.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button id="ctaOrderBtn" class="bg-white text-brand-red hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg">
-                        Pesan Sekarang
-                    </button>
-                    <button class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-brand-red transition-all">
-                        Kontak Kami
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
-        <div class="absolute inset-0 bg-batik-pattern opacity-5"></div>
-        <div class="container mx-auto px-4 md:px-6 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-brand-orange text-lg font-medium mb-2">Kontak</h2>
-                <h3 class="text-3xl md:text-4xl font-bold font-serif text-brand-black dark:text-white mb-4">Hubungi Kami</h3>
-                <p class="text-gray-700 dark:text-gray-300">Untuk pemesanan, kerja sama, atau pertanyaan lainnya, jangan ragu untuk menghubungi kami.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md dark:shadow-custom p-8">
-                    <h4 class="text-xl font-bold text-brand-black dark:text-white mb-6">Kirim Pesan</h4>
-                    <form>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nama</label>
-                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-brand-orange bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-base">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
-                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-brand-orange bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-base">
-                            </div>
-                        </div>
-                        <div class="mb-6">
-                            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Subjek</label>
-                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-brand-orange bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-base">
-                        </div>
-                        <div class="mb-6">
-                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Pesan</label>
-                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-brand-orange bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-base"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-brand-red hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105">
-                            Kirim Pesan
-                        </button>
-                    </form>
-                </div>
-                
-                <div>
-                    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md dark:shadow-custom p-8 mb-8">
-                        <h4 class="text-xl font-bold text-brand-black dark:text-white mb-6">Informasi Kontak</h4>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-brand-orange bg-opacity-20 flex items-center justify-center text-brand-orange">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                                <div class="ml-4">
-                                    <h5 class="text-lg font-medium text-brand-black dark:text-white">Alamat</h5>
-                                    <p class="text-gray-600 dark:text-gray-400">Jl. Raya Pasar Minggu No. 12<br>Jakarta Selatan, 12520</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-brand-orange bg-opacity-20 flex items-center justify-center text-brand-orange">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                                    </svg>
-                                </div>
-                                <div class="ml-4">
-                                    <h5 class="text-lg font-medium text-brand-black dark:text-white">Telepon</h5>
-                                    <p class="text-gray-600 dark:text-gray-400">+62 21 5553 8899</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-brand-orange bg-opacity-20 flex items-center justify-center text-brand-orange">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                                    </svg>
-                                </div>
-                                <div class="ml-4">
-                                    <h5 class="text-lg font-medium text-brand-black dark:text-white">Email</h5>
-                                    <p class="text-gray-600 dark:text-gray-400">info@miepadeh.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md dark:shadow-custom p-8">
-                        <h4 class="text-xl font-bold text-brand-black dark:text-white mb-6">Jam Operasional</h4>
-                        <div class="space-y-2">
-                            <div class="flex justify-between">
-                                <span class="text-gray-600 dark:text-gray-400">Senin - Jumat</span>
-                                <span class="font-medium text-brand-black dark:text-white">09:00 - 18:00</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-600 dark:text-gray-400">Sabtu</span>
-                                <span class="font-medium text-brand-black dark:text-white">10:00 - 16:00</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-600 dark:text-gray-400">Minggu</span>
-                                <span class="font-medium text-brand-black dark:text-white">Tutup</span>
-                            </div>
-                        </div>
-                        <div class="mt-6">
-                            <h5 class="font-medium text-brand-black dark:text-white mb-2">Ikuti Kami</h5>
-                            <div class="flex space-x-4">
-                                <a href="#" class="h-10 w-10 rounded-full bg-brand-orange bg-opacity-20 flex items-center justify-center text-brand-orange hover:bg-brand-orange hover:text-white transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                    </svg>
-                                </a>
-                                <a href="#" class="h-10 w-10 rounded-full bg-brand-orange bg-opacity-20 flex items-center justify-center text-brand-orange hover:bg-brand-orange hover:text-white transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
-                                    </svg>
-                                </a>
-                                <a href="#" class="h-10 w-10 rounded-full bg-brand-orange bg-opacity-20 flex items-center justify-center text-brand-orange hover:bg-brand-orange hover:text-white transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                                    </svg>
-                                </a>
-                                <a href="#" class="h-10 w-10 rounded-full bg-brand-orange bg-opacity-20 flex items-center justify-center text-brand-orange hover:bg-brand-orange hover:text-white transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-brand-black py-12 text-white">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div>
-                    <a href="#" class="flex items-center mb-6">
-                        <span class="text-brand-red font-bold text-2xl font-serif">Mie</span>
-                        <span class="text-brand-orange font-bold text-2xl font-serif ml-1">Padeh</span>
-                    </a>
-                    <p class="text-gray-400 mb-6">Sensasi pedas otentik Nusantara yang memadukan kekayaan rempah tradisional dengan sentuhan modern.</p>
-                    <p class="text-gray-400">&copy; 2023 Mie Padeh. All rights reserved.</p>
-                </div>
-                
-                <div>
-                    <h5 class="text-lg font-bold mb-6">Menu Utama</h5>
-                    <ul class="space-y-3">
-                        <li><a href="#story" class="text-gray-400 hover:text-brand-orange transition-colors">Cerita Kami</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-brand-orange transition-colors">Produk</a></li>
-                        <li><a href="#gallery" class="text-gray-400 hover:text-brand-orange transition-colors">Galeri</a></li>
-                        <li><a href="#testimonials" class="text-gray-400 hover:text-brand-orange transition-colors">Testimoni</a></li>
-                        <li><a href="#blog" class="text-gray-400 hover:text-brand-orange transition-colors">Blog</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-brand-orange transition-colors">Kontak</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h5 class="text-lg font-bold mb-6">Produk</h5>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-brand-orange transition-colors">Mie Padeh Original</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-brand-orange transition-colors">Mie Padeh Api</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-brand-orange transition-colors">Mie Padeh Hijau</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-brand-orange transition-colors">Mie Padeh Special</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-brand-orange transition-colors">Mie Padeh Seafood</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-brand-orange transition-colors">Bundling Packages</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h5 class="text-lg font-bold mb-6">Langganan</h5>
-                    <p class="text-gray-400 mb-4">Daftar untuk mendapatkan promo dan update produk terbaru dari Mie Padeh.</p>
-                    <form class="mb-6">
-                        <div class="flex">
-                            <input type="email" placeholder="Email Anda" class="flex-1 px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-brand-orange bg-gray-800 border-gray-700 text-white text-base">
-                            <button type="submit" class="bg-brand-orange hover:bg-amber-600 text-white px-4 py-2 rounded-r-lg transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                        </div>
-                    </form>
-                    <p class="text-sm text-gray-500">Pembayaran via:</p>
-                    <div class="flex space-x-3 mt-2">
-                        <div class="h-8 w-12 bg-white rounded flex items-center justify-center text-xs text-gray-800 font-bold">VISA</div>
-                        <div class="h-8 w-12 bg-white rounded flex items-center justify-center text-xs text-gray-800 font-bold">MC</div>
-                        <div class="h-8 w-12 bg-white rounded flex items-center justify-center text-xs text-gray-800 font-bold">GoPay</div>
-                        <div class="h-8 w-12 bg-white rounded flex items-center justify-center text-xs text-gray-800 font-bold">OVO</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-6 right-6 h-12 w-12 rounded-full bg-brand-red text-white shadow-lg flex items-center justify-center transform transition-all duration-300 translate-y-20 opacity-0 hover:bg-red-700">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-        </svg>
-    </button>
-
-    <!-- Preorder Modal -->
-    <div id="orderModal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
-        <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
-        <div class="relative bg-white dark:bg-gray-900 rounded-xl shadow-2xl max-w-md w-full mx-4 animate-fade-in">
-            <div class="absolute top-0 right-0 pt-4 pr-4">
-                <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            <div class="p-6">
-                <h3 class="text-2xl font-bold text-brand-black dark:text-white mb-4">Pesan Mie Padeh</h3>
-                <form>
-                    <div class="mb-4">
-                        <label for="product" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Pilih Produk</label>
-                        <select id="product" name="product" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-brand-orange bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-base">
-                            <option value="original">Mie Padeh Original - Rp 25.000</option>
-                            <option value="api">Mie Padeh Api - Rp 28.000</option>
-                            <option value="hijau">Mie Padeh Hijau - Rp 30.000</option>
-                            <option value="special">Mie Padeh Special - Rp 32.000</option>
-                            <option value="seafood">Mie Padeh Seafood - Rp 35.000</option>
-                        </select>
-                    </div>
-                    <div class="mb-4">
-                        <label for="quantity" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Jumlah</label>
-                        <div class="flex">
-                            <button type="button" id="decreaseQty" class="px-3 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white rounded-l-lg">-</button>
-                            <input type="number" id="quantity" name="quantity" value="1" min="1" class="w-16 text-center border-y border-gray-300 dark:border-gray-700 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-base">
-                            <button type="button" id="increaseQty" class="px-3 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white rounded-r-lg">+</button>
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nama Lengkap</label>
-                        <input type="text" id="orderName" name="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-brand-orange bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-base">
-                    </div>
-                    <div class="mb-4">
-                        <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nomor Telepon</label>
-                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-brand-orange bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-base">
-                    </div>
-                    <div class="mb-4">
-                        <label for="address" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Alamat Pengiriman</label>
-                        <textarea id="address" name="address" rows="3" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-brand-orange bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-base"></textarea>
-                    </div>
-                    <div class="mb-4">
-                        <label for="notes" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Catatan (opsional)</label>
-                        <textarea id="notes" name="notes" rows="2" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-brand-orange bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-base"></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-brand-red hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105">
-                        Konfirmasi Pesanan
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-
+<body class="bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text transition-colors duration-300">
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-dark-bg/90 backdrop-blur-sm shadow-sm py-4 transition-colors duration-300">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="text-xl md:text-2xl font-bold text-dark:text-purple-300 text-light:text-purple-700">CIG0R3</a>
+<body class="font-sans bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <!-- Dark mode detection -->
     <script>
-        // Check for dark mode preference
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.documentElement.classList.add('dark');
         }
-        
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
             if (event.matches) {
                 document.documentElement.classList.add('dark');
@@ -993,117 +251,1475 @@
                 document.documentElement.classList.remove('dark');
             }
         });
+    </script>
 
-        // Mobile menu toggle
-        document.getElementById('toggleMenu').addEventListener('click', function() {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
+    <!-- Hero Section / Main Cover -->
+    <section id="home" class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden hero-pattern bg-secondary dark:bg-gray-900 scroll-section">
+        <!-- Decorative elements -->
+        <div class="ornament flower top-10 left-10 opacity-10 dark:opacity-5"></div>
+        <div class="ornament flower top-10 right-10 opacity-10 dark:opacity-5"></div>
+        <div class="ornament flower bottom-10 left-10 opacity-10 dark:opacity-5"></div>
+        <div class="ornament flower bottom-10 right-10 opacity-10 dark:opacity-5"></div>
+        
+        <div class="container max-w-5xl mx-auto text-center relative z-10 py-16">
+            <!-- Pre-title -->
+            <div class="mb-8 opacity-90">
+                <p class="uppercase tracking-[0.3em] text-sm md:text-base text-primary">Undangan Pernikahan</p>
+                <div class="floral-divider">
+                    <span class="inline-block text-primary"><i class="fas fa-heart"></i></span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex space-x-6 font-medium">
+                <a href="#about" class="hover:text-primary transition-colors">Tentang</a>
+                <a href="#projects" class="hover:text-primary transition-colors">Proyek</a>
+                <a href="#experience" class="hover:text-primary transition-colors">Pengalaman</a>
+                <a href="#skills" class="hover:text-primary transition-colors">Keahlian</a>
+                <a href="#testimonials" class="hover:text-primary transition-colors">Testimoni</a>
+                <a href="#contact" class="hover:text-primary transition-colors">Kontak</a>
+            </nav>
+            <!-- Names -->
+            <h1 class="font-script text-5xl md:text-7xl lg:text-8xl text-primary mb-8">Adam & Hawa</h1>
+
+            <div class="flex items-center space-x-3">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-dark-card transition-colors">
+                    <i class="fa-solid fa-moon hidden dark:inline-block"></i>
+                    <i class="fa-solid fa-sun inline-block dark:hidden"></i>
+                </button>
+            <!-- Invitation Message -->
+            <div class="max-w-2xl mx-auto bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl px-8 py-10 shadow-xl mb-10">
+                <p class="text-sm md:text-base mb-6">Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan putra-putri kami:</p>
+
+                <button class="md:hidden" id="menu-toggle">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-6">
+                    <div class="text-center">
+                        <h3 class="font-serif text-xl md:text-2xl mb-1">Adam Saputra, S.Kom</h3>
+                        <p class="text-sm md:text-base text-gray-600 dark:text-gray-400">Putra dari Bpk. Budi Saputra & Ibu Siti Rahayu</p>
+                    </div>
+                    
+                    <div class="text-primary text-xl md:text-3xl">&</div>
+                    
+                    <div class="text-center">
+                        <h3 class="font-serif text-xl md:text-2xl mb-1">Hawa Putri, S.E</h3>
+                        <p class="text-sm md:text-base text-gray-600 dark:text-gray-400">Putri dari Bpk. Bambang Sutrisno & Ibu Dewi Kartini</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Date & Location -->
+            <div class="inline-block border-2 border-primary rounded-lg px-8 py-6 mb-10 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm shadow-lg">
+                <p class="text-base md:text-lg font-medium">Sabtu, <span class="text-primary">15 November 2024</span></p>
+                <div class="w-20 h-1 bg-primary/30 rounded-full mx-auto my-3"></div>
+                <p class="text-base">The Ritz-Carlton, Jakarta</p>
+            </div>
+            
+            <!-- Countdown Timer -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <div class="w-20 md:w-24 aspect-square bg-white dark:bg-gray-800 rounded-xl shadow-lg flex flex-col justify-center items-center">
+                    <div id="days" class="text-3xl md:text-4xl font-bold text-primary">00</div>
+                    <div class="text-xs md:text-sm text-gray-600 dark:text-gray-400">Hari</div>
+                </div>
+                <div class="w-20 md:w-24 aspect-square bg-white dark:bg-gray-800 rounded-xl shadow-lg flex flex-col justify-center items-center">
+                    <div id="hours" class="text-3xl md:text-4xl font-bold text-primary">00</div>
+                    <div class="text-xs md:text-sm text-gray-600 dark:text-gray-400">Jam</div>
+                </div>
+                <div class="w-20 md:w-24 aspect-square bg-white dark:bg-gray-800 rounded-xl shadow-lg flex flex-col justify-center items-center">
+                    <div id="minutes" class="text-3xl md:text-4xl font-bold text-primary">00</div>
+                    <div class="text-xs md:text-sm text-gray-600 dark:text-gray-400">Menit</div>
+                </div>
+                <div class="w-20 md:w-24 aspect-square bg-white dark:bg-gray-800 rounded-xl shadow-lg flex flex-col justify-center items-center">
+                    <div id="seconds" class="text-3xl md:text-4xl font-bold text-primary">00</div>
+                    <div class="text-xs md:text-sm text-gray-600 dark:text-gray-400">Detik</div>
+                </div>
+            </div>
+            
+            <!-- Buttons -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#acara" class="bg-primary text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-primary/90 transition shadow-lg hover:shadow-xl">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Detail Acara</span>
+                </a>
+                <a href="#rsvp" class="bg-white dark:bg-gray-800 text-primary px-6 py-3 rounded-full flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition border border-primary shadow-lg hover:shadow-xl">
+                    <i class="fas fa-envelope"></i>
+                    <span>RSVP</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden container mx-auto px-4 pt-4 pb-2">
+            <nav class="flex flex-col space-y-2 font-medium">
+                <a href="#about" class="py-2 hover:text-primary transition-colors">Tentang</a>
+                <a href="#projects" class="py-2 hover:text-primary transition-colors">Proyek</a>
+                <a href="#experience" class="py-2 hover:text-primary transition-colors">Pengalaman</a>
+                <a href="#skills" class="py-2 hover:text-primary transition-colors">Keahlian</a>
+                <a href="#testimonials" class="py-2 hover:text-primary transition-colors">Testimoni</a>
+                <a href="#contact" class="py-2 hover:text-primary transition-colors">Kontak</a>
+            </nav>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-20 px-4 bg-white dark:bg-gray-800 relative overflow-hidden">
+        <div class="container mx-auto max-w-4xl text-center">
+            <div class="text-primary mb-6"><i class="fas fa-heart text-lg"></i></div>
+            <h2 class="font-script text-3xl md:text-4xl text-primary mb-6">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan dari jenismu sendiri..."</h2>
+            <p class="text-gray-600 dark:text-gray-400">QS. Ar-Rum: 21</p>
+        </div>
+    </header>
+    </section>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 md:py-28 transition-colors duration-300">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 animate-fade-in">
+                        <div class="w-48 h-48 md:w-64 md:h-64 mx-auto md:mx-0 rounded-full overflow-hidden border-4 border-primary">
+                            <div class="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-6xl">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+    <!-- Mempelai Section -->
+    <section id="mempelai" class="py-20 px-4 bg-secondary dark:bg-gray-900 relative overflow-hidden scroll-section">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-script text-4xl md:text-5xl text-primary mb-3">Mempelai</h2>
+                <div class="floral-divider">
+                    <span class="inline-block text-primary"><i class="fas fa-heart"></i></span>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <!-- Mempelai Pria -->
+                <div class="text-center flex flex-col items-center">
+                    <div class="w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-primary mb-6 mx-auto shadow-lg">
+                        <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                            <i class="fas fa-user text-4xl text-gray-400"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 text-center md:text-left animate-slide-up">
+                        <h1 class="text-3xl md:text-5xl font-bold mb-4">
+                            Eko <span class="text-primary">Maidiansyah</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6">
+                            Full-Stack Developer | Problem Solver | Tech Enthusiast
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto md:mx-0">
+                            Menghadirkan solusi teknologi yang inovatif dengan kode bersih dan performa tinggi. Spesialis dalam pengembangan web modern dan aplikasi multi-platform.
+                        </p>
+                        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                            <a href="#contact" class="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-indigo-600 transition-colors">
+                                Hubungi Saya
+                            </a>
+                            <a href="https://cig0re.github.io/Portofolio/INGREDIENTS.pdf" class="px-6 py-3 border border-primary text-primary font-medium rounded-lg hover:bg-primary hover:text-white transition-colors">
+                                Download CV
+                            </a>
+                    <h3 class="font-serif text-2xl md:text-3xl mb-1">Adam Saputra, S.Kom</h3>
+                    <p class="text-primary mb-4">Mempelai Pria</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Putra pertama dari Bapak Budi Saputra & Ibu Siti Rahayu</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-primary hover:text-primary/80 transition"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Mempelai Wanita -->
+                <div class="text-center flex flex-col items-center">
+                    <div class="w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-primary mb-6 mx-auto shadow-lg">
+                        <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                            <i class="fas fa-user text-4xl text-gray-400"></i>
+                        </div>
+                    </div>
+                    <h3 class="font-serif text-2xl md:text-3xl mb-1">Hawa Putri, S.E</h3>
+                    <p class="text-primary mb-4">Mempelai Wanita</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Putri kedua dari Bapak Bambang Sutrisno & Ibu Dewi Kartini</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-primary hover:text-primary/80 transition"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+    </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-16 bg-light-card dark:bg-dark-card transition-colors duration-300">
+            <div class="container mx-auto px-4 md:px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Tentang Saya</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-lg mb-6">
+                            Saya adalah seorang <span class="font-semibold text-primary">Full-Stack Developer</span> dengan pengalaman lebih dari 5 tahun dalam mengembangkan aplikasi web dan mobile yang skalabel. Saya menggabungkan keahlian teknis dengan pemahaman bisnis untuk memberikan solusi yang optimal.
+                        </p>
+                        <p class="text-lg mb-6">
+                            Latar belakang saya dalam Computer Science dan pengalaman bekerja dengan berbagai startup dan perusahaan teknologi memberikan saya perspektif yang unik dalam mengatasi tantangan teknis.
+                        </p>
+                        <p class="text-lg">
+                            Saya passionate tentang code quality, arsitektur software yang bersih, dan selalu berusaha mengikuti perkembangan teknologi terbaru.
+                        </p>
+    <!-- Detail Acara -->
+    <section id="acara" class="py-20 px-4 relative overflow-hidden scroll-section">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-script text-4xl md:text-5xl text-primary mb-3">Rangkaian Acara</h2>
+                <div class="floral-divider">
+                    <span class="inline-block text-primary"><i class="fas fa-calendar-alt"></i></span>
+                </div>
+                <p class="max-w-2xl mx-auto mt-6 text-gray-600 dark:text-gray-400">Dengan segala hormat dan kerendahan hati, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada acara pernikahan kami.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Akad Nikah -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 envelope">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-ring text-primary text-2xl"></i>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-4 md:gap-6">
+                        <div class="bg-white dark:bg-dark-bg p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+                            <div class="text-3xl text-primary mb-2">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h3 class="font-semibold mb-1">Frontend</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">React, Vue, Angular</p>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-bg p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+                            <div class="text-3xl text-primary mb-2">
+                                <i class="fa-solid fa-server"></i>
+                            </div>
+                            <h3 class="font-semibold mb-1">Backend</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Node.js, Python, PHP</p>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-bg p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+                            <div class="text-3xl text-primary mb-2">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <h3 class="font-semibold mb-1">Database</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">MySQL, MongoDB, PostgreSQL</p>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-bg p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+                            <div class="text-3xl text-primary mb-2">
+                                <i class="fa-solid fa-cloud"></i>
+                            </div>
+                            <h3 class="font-semibold mb-1">Cloud</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">AWS, GCP, Azure</p>
+                    <h3 class="font-serif text-2xl text-center mb-4">Akad Nikah</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 flex-shrink-0"><i class="far fa-calendar-alt text-primary"></i></div>
+                            <div>Sabtu, 15 November 2024</div>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-bg p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+                            <div class="text-3xl text-primary mb-2">
+                                <i class="fa-solid fa-gears"></i>
+                            </div>
+                            <h3 class="font-semibold mb-1">DevOps</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Docker, CI/CD, Kubernetes</p>
+                        <div class="flex items-center">
+                            <div class="w-10 flex-shrink-0"><i class="far fa-clock text-primary"></i></div>
+                            <div>08:00 - 10:00 WIB</div>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-bg p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+                            <div class="text-3xl text-primary mb-2">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                            </div>
+                            <h3 class="font-semibold mb-1">Mobile</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">React Native, Flutter</p>
+                        <div class="flex items-center">
+                            <div class="w-10 flex-shrink-0"><i class="fas fa-map-marker-alt text-primary"></i></div>
+                            <div>The Ritz-Carlton Jakarta<br>Ballroom Lotus, Lantai 3<br>Jl. Jendral Sudirman Kav 52-53, Jakarta</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GitHub Stats -->
+                <div class="mt-16 bg-white dark:bg-dark-bg p-6 rounded-lg shadow-sm">
+                    <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold mb-2 md:mb-0">GitHub Contributions</h3>
+                        <a href="#" target="_blank" class="text-primary hover:underline">
+                            <i class="fa-brands fa-github mr-1"></i>
+                            View GitHub Profile
+                    <div class="text-center mt-8">
+                        <a href="https://maps.googleapis.com" target="_blank" class="inline-block bg-primary text-white px-5 py-2 rounded-full text-sm hover:bg-primary/90 transition-colors shadow-md">
+                            <i class="fas fa-map-marked-alt mr-2"></i>Lihat Lokasi
+                        </a>
+                    </div>
+                    
+                    <div class="contribution-graph overflow-auto pb-4" id="github-contributions">
+                        <!-- JavaScript will generate this graph -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 transition-colors duration-300">
+            <div class="container mx-auto px-4 md:px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Proyek Terbaik</h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="project-card bg-light-card dark:bg-dark-card rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="relative overflow-hidden h-48">
+                            <div class="w-full h-full bg-gradient-to-r from-blue-500 to-primary flex items-center justify-center">
+                                <i class="fa-solid fa-shopping-cart text-white text-4xl"></i>
+                            </div>
+                            <div class="project-overlay absolute inset-0 bg-black/70 opacity-0 transition-opacity flex items-center justify-center">
+                                <div class="text-white text-center p-4">
+                                    <p>React, Node.js, MongoDB</p>
+                                    <p class="mt-2">Platform e-commerce dengan fitur pembayaran dan sistem manajemen produk canggih</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                                Lead Developer | 2022
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded text-xs">React</span>
+                                <span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300 rounded text-xs">Node.js</span>
+                                <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-300 rounded text-xs">MongoDB</span>
+                            </div>
+                            <a href="#" class="text-primary hover:underline flex items-center text-sm font-medium">
+                                Lihat Detail
+                                <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                <!-- Resepsi -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 envelope">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-glass-cheers text-primary text-2xl"></i>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card bg-light-card dark:bg-dark-card rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="relative overflow-hidden h-48">
+                            <div class="w-full h-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+                                <i class="fa-solid fa-chart-line text-white text-4xl"></i>
+                            </div>
+                            <div class="project-overlay absolute inset-0 bg-black/70 opacity-0 transition-opacity flex items-center justify-center">
+                                <div class="text-white text-center p-4">
+                                    <p>Vue.js, Laravel, MySQL</p>
+                                    <p class="mt-2">Dashboard analitik dengan visualisasi data real-time dan laporan kustom</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                                Full-Stack Developer | 2021
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300 rounded text-xs">Vue.js</span>
+                                <span class="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-300 rounded text-xs">Laravel</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded text-xs">MySQL</span>
+                            </div>
+                            <a href="#" class="text-primary hover:underline flex items-center text-sm font-medium">
+                                Lihat Detail
+                                <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </a>
+                    <h3 class="font-serif text-2xl text-center mb-4">Resepsi</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 flex-shrink-0"><i class="far fa-calendar-alt text-primary"></i></div>
+                            <div>Sabtu, 15 November 2024</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card bg-light-card dark:bg-dark-card rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="relative overflow-hidden h-48">
+                            <div class="w-full h-full bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center">
+                                <i class="fa-solid fa-mobile-screen text-white text-4xl"></i>
+                            </div>
+                            <div class="project-overlay absolute inset-0 bg-black/70 opacity-0 transition-opacity flex items-center justify-center">
+                                <div class="text-white text-center p-4">
+                                    <p>React Native, Firebase</p>
+                                    <p class="mt-2">Aplikasi kesehatan mobile dengan fitur tracking dan notifikasi personal</p>
+                                </div>
+                            </div>
+                        <div class="flex items-center">
+                            <div class="w-10 flex-shrink-0"><i class="far fa-clock text-primary"></i></div>
+                            <div>11:00 - 14:00 WIB</div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2">Health Tracker App</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                                Mobile Developer | 2021
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded text-xs">React Native</span>
+                                <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-300 rounded text-xs">Firebase</span>
+                                <span class="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-300 rounded text-xs">Redux</span>
+                            </div>
+                            <a href="#" class="text-primary hover:underline flex items-center text-sm font-medium">
+                                Lihat Detail
+                                <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </a>
+                        <div class="flex items-center">
+                            <div class="w-10 flex-shrink-0"><i class="fas fa-map-marker-alt text-primary"></i></div>
+                            <div>The Ritz-Carlton Jakarta<br>Grand Ballroom, Lantai 2<br>Jl. Jendral Sudirman Kav 52-53, Jakarta</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="project-card bg-light-card dark:bg-dark-card rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="relative overflow-hidden h-48">
+                            <div class="w-full h-full bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center">
+                                <i class="fa-solid fa-graduation-cap text-white text-4xl"></i>
+                            </div>
+                            <div class="project-overlay absolute inset-0 bg-black/70 opacity-0 transition-opacity flex items-center justify-center">
+                                <div class="text-white text-center p-4">
+                                    <p>Angular, Django, PostgreSQL</p>
+                                    <p class="mt-2">Platform pendidikan online dengan video courses dan forum diskusi</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2">Learning Management System</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                                Backend Developer | 2020
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-300 rounded text-xs">Angular</span>
+                                <span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300 rounded text-xs">Django</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded text-xs">PostgreSQL</span>
+                            </div>
+                            <a href="#" class="text-primary hover:underline flex items-center text-sm font-medium">
+                                Lihat Detail
+                                <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    <div class="text-center mt-8">
+                        <a href="https://maps.googleapis.com" target="_blank" class="inline-block bg-primary text-white px-5 py-2 rounded-full text-sm hover:bg-primary/90 transition-colors shadow-md">
+                            <i class="fas fa-map-marked-alt mr-2"></i>Lihat Lokasi
+                        </a>
+                    </div>
+                    
+                    <!-- Project 5 -->
+                    <div class="project-card bg-light-card dark:bg-dark-card rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="relative overflow-hidden h-48">
+                            <div class="w-full h-full bg-gradient-to-r from-red-500 to-pink-500 flex items-center justify-center">
+                                <i class="fa-solid fa-comments text-white text-4xl"></i>
+                            </div>
+                            <div class="project-overlay absolute inset-0 bg-black/70 opacity-0 transition-opacity flex items-center justify-center">
+                                <div class="text-white text-center p-4">
+                                    <p>React, WebSocket, Express.js</p>
+                                    <p class="mt-2">Platform komunikasi real-time dengan fitur chat dan video call</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2">Real-time Chat Application</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                                Frontend Developer | 2020
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded text-xs">React</span>
+                                <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 rounded text-xs">WebSocket</span>
+                                <span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300 rounded text-xs">Express.js</span>
+                            </div>
+                            <a href="#" class="text-primary hover:underline flex items-center text-sm font-medium">
+                                Lihat Detail
+                                <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </a>
+                </div>
+            </div>
+            
+            <!-- Health Protocol -->
+            <div class="mt-16 max-w-4xl mx-auto bg-white/80 dark:bg-gray-800/80 backdrop-blur p-8 rounded-2xl shadow-lg">
+                <h3 class="font-serif text-2xl text-center mb-6">Protokol Kesehatan</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div>
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-head-side-mask text-primary text-2xl"></i>
+                        </div>
+                        <p class="text-sm md:text-base">Gunakan Masker</p>
+                    </div>
+                    
+                    <!-- Project 6 -->
+                    <div class="project-card bg-light-card dark:bg-dark-card rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="relative overflow-hidden h-48">
+                            <div class="w-full h-full bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center">
+                                <i class="fa-solid fa-robot text-white text-4xl"></i>
+                            </div>
+                            <div class="project-overlay absolute inset-0 bg-black/70 opacity-0 transition-opacity flex items-center justify-center">
+                                <div class="text-white text-center p-4">
+                                    <p>Python, TensorFlow, Flask</p>
+                                    <p class="mt-2">Chatbot cerdas dengan kemampuan NLP untuk layanan pelanggan</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2">AI Customer Service Chatbot</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                                ML Engineer | 2019
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded text-xs">Python</span>
+                                <span class="px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-300 rounded text-xs">TensorFlow</span>
+                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-900/30 text-gray-600 dark:text-gray-300 rounded text-xs">Flask</span>
+                            </div>
+                            <a href="#" class="text-primary hover:underline flex items-center text-sm font-medium">
+                                Lihat Detail
+                                <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </a>
+                    <div>
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-hands-wash text-primary text-2xl"></i>
+                        </div>
+                        <p class="text-sm md:text-base">Cuci Tangan</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="#" class="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-indigo-600 transition-colors">
+                        Lihat Semua Proyek
+                        <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Section -->
+        <section id="experience" class="py-16 bg-light-card dark:bg-dark-card transition-colors duration-300">
+            <div class="container mx-auto px-4 md:px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Pengalaman & Pendidikan</h2>
+                
+                <div class="grid md:grid-cols-2 gap-10 lg:gap-16">
+                    <!-- Experience -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-8 flex items-center">
+                            <i class="fa-solid fa-briefcase text-primary mr-3"></i>
+                            Pengalaman Kerja
+                        </h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4 class="text-xl font-semibold">Senior Full-Stack Developer</h4>
+                                <p class="text-primary font-medium">TechCorp Inc.</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">2021 - Sekarang</p>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    Memimpin tim pengembangan untuk sistem e-commerce skala enterprise. Meningkatkan performa aplikasi hingga 40% dengan implementasi caching dan optimasi database.
+                                </p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <h4 class="text-xl font-semibold">Frontend Developer</h4>
+                                <p class="text-primary font-medium">WebSolutions</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">2019 - 2021</p>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    Mengembangkan UI/UX untuk berbagai aplikasi web dengan fokus pada accessibilitas dan performa. Berhasil mengurangi waktu loading halaman hingga 60%.
+                                </p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <h4 class="text-xl font-semibold">Backend Developer</h4>
+                                <p class="text-primary font-medium">DataTech Startup</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">2018 - 2019</p>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    Mengembangkan API dan layanan mikroservis untuk platform analitik data. Mengimplementasikan sistem autentikasi dan otorisasi berbasis token.
+                                </p>
+                            </div>
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-people-arrows text-primary text-2xl"></i>
+                        </div>
+                        <p class="text-sm md:text-base">Jaga Jarak</p>
+                    </div>
+                    
+                    <!-- Education -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-8 flex items-center">
+                            <i class="fa-solid fa-graduation-cap text-primary mr-3"></i>
+                            Pendidikan
+                        </h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4 class="text-xl font-semibold">Master in Computer Science</h4>
+                                <p class="text-primary font-medium">University of Technology</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">2016 - 2018</p>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    Fokus pada Machine Learning dan Distributed Systems. Tesis tentang optimasi algoritma untuk data streaming dalam arsitektur cloud.
+                                </p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <h4 class="text-xl font-semibold">Bachelor in Software Engineering</h4>
+                                <p class="text-primary font-medium">Technical Institute</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">2012 - 2016</p>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    Lulus dengan predikat Cum Laude. Aktif dalam klub pemrograman dan kompetisi hackathon nasional.
+                                </p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <h4 class="text-xl font-semibold">Certification</h4>
+                                <p class="text-primary font-medium">Berbagai sertifikasi profesional</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">2017 - Sekarang</p>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    AWS Certified Solutions Architect, Google Cloud Professional Developer, Certified Kubernetes Administrator (CKA).
+                                </p>
+                            </div>
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-handshake-slash text-primary text-2xl"></i>
+                        </div>
+                        <p class="text-sm md:text-base">Hindari Kerumunan</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+    </section>
+
+        <!-- Skills & Tools Section -->
+        <section id="skills" class="py-16 transition-colors duration-300">
+            <div class="container mx-auto px-4 md:px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Keahlian & Tools</h2>
+                
+                <div class="grid md:grid-cols-2 gap-10">
+                    <!-- Technical Skills -->
+                    <div class="bg-light-card dark:bg-dark-card p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-6">Keahlian Teknis</h3>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">JavaScript/TypeScript</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">React & React Native</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Node.js & Express</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">HTML/CSS/SASS</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Python</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">SQL & NoSQL Databases</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">DevOps & Cloud Services</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+    <!-- Gallery -->
+    <section id="gallery" class="py-20 px-4 bg-secondary dark:bg-gray-900 relative overflow-hidden scroll-section">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-script text-4xl md:text-5xl text-primary mb-3">Galeri Foto</h2>
+                <div class="floral-divider">
+                    <span class="inline-block text-primary"><i class="fas fa-camera"></i></span>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                <!-- Gallery items -->
+                <div class="aspect-square overflow-hidden rounded-xl shadow-lg">
+                    <div class="w-full h-full bg-gray-300 flex items-center justify-center gallery-img">
+                        <i class="fas fa-image text-4xl text-gray-500"></i>
+                    </div>
+                    
+                    <!-- Tools & Technologies -->
+                    <div class="bg-light-card dark:bg-dark-card p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-6">Tools & Teknologi</h3>
+                        
+                        <div class="grid grid-cols-3 gap-4 md:gap-6">
+                            <div class="flex flex-col items-center justify-center p-3 bg-white dark:bg-dark-bg rounded hover:shadow-md transition-shadow">
+                                <i class="fa-brands fa-react text-4xl text-blue-500 mb-2"></i>
+                                <span class="text-sm font-medium">React</span>
+                            </div>
+                            
+                            <div class="flex flex-col items-center justify-center p-3 bg-white dark:bg-dark-bg rounded hover:shadow-md transition-shadow">
+                                <i class="fa-brands fa-vuejs text-4xl text-green-500 mb-2"></i>
+                                <span class="text-sm font-medium">Vue.js</span>
+                            </div>
+                            
+                            <div class="flex flex-col items-center justify-center p-3 bg-white dark:bg-dark-bg rounded hover:shadow-md transition-shadow">
+                                <i class="fa-brands fa-angular text-4xl text-red-500 mb-2"></i>
+                                <span class="text-sm font-medium">Angular</span>
+                            </div>
+                            
+                            <div class="flex flex-col items-center justify-center p-3 bg-white dark:bg-dark-bg rounded hover:shadow-md transition-shadow">
+                                <i class="fa-brands fa-node-js text-4xl text-green-600 mb-2"></i>
+                                <span class="text-sm font-medium">Node.js</span>
+                            </div>
+                            
+                            <div class="flex flex-col items-center justify-center p-3 bg-white dark:bg-dark-bg rounded hover:shadow-md transition-shadow">
+                                <i class="fa-brands fa-python text-4xl text-blue-600 mb-2"></i>
+                                <span class="text-sm font-medium">Python</span>
+                            </div>
+                            
+                            <div class="flex flex-col items-center justify-center p-3 bg-white dark:bg-dark-bg rounded hover:shadow-md transition-shadow">
+                                <i class="fa-brands fa-php text-4xl text-indigo-500 mb-2"></i>
+                                <span class="text-sm font-medium">PHP</span>
+                            </div>
+                            
+                            <div class="flex flex-col items-center justify-center p-3 bg-white dark:bg-dark-bg rounded hover:shadow-md transition-shadow">
+                                <i class="fa-brands fa-aws text-4xl text-orange-500 mb-2"></i>
+                                <span class="text-sm font-medium">AWS</span>
+                            </div>
+                            
+                            <div class="flex flex-col items-center justify-center p-3 bg-white dark:bg-dark-bg rounded hover:shadow-md transition-shadow">
+                                <i class="fa-brands fa-docker text-4xl text-blue-500 mb-2"></i>
+                                <span class="text-sm font-medium">Docker</span>
+                            </div>
+                            
+                            <div class="flex flex-col items-center justify-center p-3 bg-white dark:bg-dark-bg rounded hover:shadow-md transition-shadow">
+                                <i class="fa-brands fa-git-alt text-4xl text-orange-600 mb-2"></i>
+                                <span class="text-sm font-medium">Git</span>
+                            </div>
+                            
+                            <div class="flex flex-col items-center justify-center p-3 bg-white dark:bg-dark-bg rounded hover:shadow-md transition-shadow">
+                                <i class="fa-brands fa-figma text-4xl text-purple-500 mb-2"></i>
+                                <span class="text-sm font-medium">Figma</span>
+                            </div>
+                            
+                            <div class="flex flex-col items-center justify-center p-3 bg-white dark:bg-dark-bg rounded hover:shadow-md transition-shadow">
+                                <i class="fa-solid fa-database text-4xl text-blue-600 mb-2"></i>
+                                <span class="text-sm font-medium">MongoDB</span>
+                            </div>
+                            
+                            <div class="flex flex-col items-center justify-center p-3 bg-white dark:bg-dark-bg rounded hover:shadow-md transition-shadow">
+                                <i class="fa-solid fa-server text-4xl text-gray-600 dark:text-gray-400 mb-2"></i>
+                                <span class="text-sm font-medium">SQL</span>
+                            </div>
+                        </div>
+                </div>
+                <div class="aspect-square overflow-hidden rounded-xl shadow-lg">
+                    <div class="w-full h-full bg-gray-300 flex items-center justify-center gallery-img">
+                        <i class="fas fa-image text-4xl text-gray-500"></i>
+                    </div>
+                </div>
+                <div class="aspect-square overflow-hidden rounded-xl shadow-lg">
+                    <div class="w-full h-full bg-gray-300 flex items-center justify-center gallery-img">
+                        <i class="fas fa-image text-4xl text-gray-500"></i>
+                    </div>
+                </div>
+                <div class="aspect-square overflow-hidden rounded-xl shadow-lg">
+                    <div class="w-full h-full bg-gray-300 flex items-center justify-center gallery-img">
+                        <i class="fas fa-image text-4xl text-gray-500"></i>
+                    </div>
+                </div>
+                <div class="aspect-square overflow-hidden rounded-xl shadow-lg">
+                    <div class="w-full h-full bg-gray-300 flex items-center justify-center gallery-img">
+                        <i class="fas fa-image text-4xl text-gray-500"></i>
+                    </div>
+                </div>
+                <div class="aspect-square overflow-hidden rounded-xl shadow-lg">
+                    <div class="w-full h-full bg-gray-300 flex items-center justify-center gallery-img">
+                        <i class="fas fa-image text-4xl text-gray-500"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+    </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-16 bg-light-card dark:bg-dark-card transition-colors duration-300">
+            <div class="container mx-auto px-4 md:px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Testimonial</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-dark-bg p-6 rounded-lg shadow relative">
+                        <div class="absolute -top-5 left-6 text-4xl text-primary">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <p class="italic text-gray-700 dark:text-gray-300 mb-6 pt-4">
+                            "Satu dari sedikit developer yang saya kenal yang bisa menggabungkan keahlian teknis dengan pemahaman bisnis yang mendalam. Solusi yang diberikan selalu tepat sasaran dan scalable."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center text-gray-600">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Sarah Johnson</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">CTO, TechCorp Inc.</p>
+                            </div>
+                        </div>
+    <!-- Gift / Amplop Digital Section -->
+    <section id="amplop" class="py-20 px-4 relative overflow-hidden scroll-section">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="font-script text-4xl md:text-5xl text-primary mb-3">Amplop Digital</h2>
+                <div class="floral-divider">
+                    <span class="inline-block text-primary"><i class="fas fa-gift"></i></span>
+                </div>
+                <p class="max-w-2xl mx-auto mt-6 text-gray-600 dark:text-gray-400">Doa restu Anda adalah karunia terbesar bagi kami. Namun, jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado melalui:</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- BCA -->
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg bank-card">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="font-bold text-xl">Bank BCA</div>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 25' width='70'%3E%3Cpath d='M32.153 0H2.847A2.61 2.61 0 0 0 .234 2.609l-.002.004v19.774A2.61 2.61 0 0 0 2.847 25h29.306a2.61 2.61 0 0 0 2.615-2.609l.001-.004V2.613A2.61 2.61 0 0 0 32.153 0zM9.058 17.755c-.273.494-.646.878-1.112 1.151-.467.273-1.018.409-1.654.409-.61 0-1.172-.124-1.684-.372a3.006 3.006 0 0 1-1.247-1.122c-.31-.503-.51-1.125-.601-1.865H5.97c.072.374.208.681.405.921.198.24.448.42.751.539.304.12.633.18.989.18.442 0 .813-.098 1.112-.293.299-.196.447-.483.447-.863 0-.271-.077-.494-.232-.67a1.662 1.662 0 0 0-.643-.428 13.184 13.184 0 0 0-1.275-.4 8.903 8.903 0 0 1-1.569-.552 2.404 2.404 0 0 1-.914-.793c-.223-.33-.335-.748-.335-1.256 0-.542.144-1.01.431-1.408.287-.397.668-.705 1.143-.921.475-.217 1.005-.325 1.591-.325.612 0 1.158.109 1.639.325.48.217.862.519 1.144.905.282.386.428.833.439 1.34h-3.102c-.061-.321-.195-.565-.4-.731-.204-.166-.459-.249-.765-.249-.24 0-.453.05-.636.15-.183.1-.326.24-.431.42-.105.179-.157.383-.157.613 0 .234.066.43.198.588.132.16.31.29.533.393.223.104.592.235 1.105.392.61.185 1.091.367 1.445.548.353.18.651.385.894.613.243.228.418.49.527.786.11.295.165.632.165 1.012 0 .543-.137 1.026-.41 1.452zm11.275.157c-.445.434-.967.782-1.566 1.042-.6.26-1.256.39-1.968.39-1.005 0-1.887-.21-2.646-.628a4.09 4.09 0 0 1-1.669-1.832c-.383-.799-.575-1.746-.575-2.839 0-1.098.195-2.05.584-2.855a4.211 4.211 0 0 1 1.653-1.849c.716-.433 1.562-.65 2.539-.65.853 0 1.605.166 2.255.498.651.332 1.167.803 1.548 1.413.381.61.591 1.33.629 2.16h-3.078c-.092-.466-.267-.824-.524-1.074-.258-.251-.588-.376-.992-.376-.347 0-.637.1-.871.301-.233.2-.408.495-.525.882-.118.388-.176.859-.176 1.415 0 .555.064 1.021.192 1.398.128.378.309.665.542.863.233.199.518.299.854.299.301 0 .56-.069.78-.206.218-.138.39-.33.513-.576.123-.246.19-.533.2-.863H23.1c-.049 1.123-.32 2.011-.815 2.663a3.496 3.496 0 0 1-1.951 1.324zm8.254-6.576v2.093h-3.597v2.407h4.211v1.989h-7.522V7.085h7.402v1.99h-4.091v2.262h3.597z' fill='%230060AF'/%3E%3C/svg%3E" alt="BCA" class="h-8">
+                    </div>
+                    
+                    <div class="bg-white dark:bg-dark-bg p-6 rounded-lg shadow relative">
+                        <div class="absolute -top-5 left-6 text-4xl text-primary">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <p class="italic text-gray-700 dark:text-gray-300 mb-6 pt-4">
+                            "Tim sangat terkesan dengan pendekatan sistematis dan kualitas kode yang dihasilkan. Proyek kami selesai tepat waktu dan performa aplikasi melebihi ekspektasi kami."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center text-gray-600">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">David Lee</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Product Manager, InnovateTech</p>
+                            </div>
+                        </div>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-gray-400">Atas Nama:</p>
+                    <p class="font-bold mb-4">ADAM SAPUTRA</p>
+                    <div class="flex items-center mb-2">
+                        <p class="font-mono bg-gray-100 dark:bg-gray-700 flex-1 p-3 rounded-lg mr-2 text-lg select-all">1234567890</p>
+                        <button class="copy-button bg-primary text-white p-3 rounded-lg" onclick="copyToClipboard('1234567890')">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-dark-bg p-6 rounded-lg shadow relative">
+                        <div class="absolute -top-5 left-6 text-4xl text-primary">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <p class="italic text-gray-700 dark:text-gray-300 mb-6 pt-4">
+                            "Kolaborasi yang sangat menyenangkan! Kemampuan komunikasi yang baik dan pendekatan proaktif dalam memecahkan masalah membuat proses pengembangan menjadi lancar."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center text-gray-600">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Michelle Wong</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">UI/UX Designer, DesignHub</p>
+                            </div>
+                        </div>
+                    <div id="bca-copied" class="hidden text-green-600 text-sm mt-2 text-center">
+                        <i class="fas fa-check-circle mr-1"></i> Nomor rekening disalin!
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a href="https://www.linkedin.com" target="_blank" class="inline-flex items-center text-primary hover:underline">
+                        <i class="fa-brands fa-linkedin mr-2"></i>
+                        Lihat lebih banyak rekomendasi di LinkedIn
+                    </a>
+                <!-- Mandiri -->
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg bank-card">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="font-bold text-xl">Bank Mandiri</div>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 55' width='70'%3E%3Cpath d='M40.355 10.891H17.628c-3.739 0-6.77 3.046-6.77 6.804v18.564c0 3.758 3.03 6.804 6.77 6.804h22.727c3.739 0 6.77-3.046 6.77-6.804V17.695c0-3.758-3.031-6.804-6.77-6.804z' fill='%23003D79'/%3E%3Cpath d='M40.355 11.793c3.229 0 5.857 2.641 5.857 5.887v18.593c0 3.246-2.628 5.887-5.857 5.887H17.628c-3.229 0-5.857-2.641-5.857-5.887V17.681c0-3.246 2.628-5.887 5.857-5.887h22.727M17.628 46.959h22.727c5.463 0 9.913-4.471 9.913-9.972V17.681c0-5.5-4.45-9.972-9.913-9.972H17.628c-5.463 0-9.913 4.471-9.913 9.972v19.307c0 5.5 4.45 9.972 9.913 9.972z' fill='%23FAB900'/%3E%3Cpath d='M24.518 31.497h-2.295v5.5h2.295c1.824 0 3.11-1.245 3.11-2.752 0-1.498-1.28-2.748-3.11-2.748zm-.327-7.516h-1.968v5.005h1.968c1.681 0 2.822-1.075 2.822-2.513 0-1.414-1.128-2.492-2.822-2.492zm.539 15.527h-5.107v-17.5h4.602c3.025 0 5.094 1.77 5.094 4.367 0 1.664-1.105 3.165-2.713 3.768 2.188.465 3.768 2.299 3.768 4.538 0 2.888-2.376 4.827-5.644 4.827zm8.883-17.5h2.6v17.5h-2.6v-17.5zm12.731 7.516h-2.295v5.5h2.295c1.824 0 3.11-1.245 3.11-2.752 0-1.498-1.28-2.748-3.11-2.748zm-.327-7.516h-1.968v5.005h1.968c1.681 0 2.822-1.075 2.822-2.513 0-1.414-1.128-2.492-2.822-2.492zm.539 15.527h-5.107v-17.5h4.602c3.025 0 5.094 1.77 5.094 4.367 0 1.664-1.105 3.165-2.713 3.768 2.188.465 3.769 2.299 3.769 4.538 0 2.888-2.376 4.827-5.645 4.827z' fill='%23fff'/%3E%3Cpath d='M62.329 22.008h2.6v17.5h-2.6v-17.5zm9.505 10.068l4.684-10.068h2.835l-7.918 17.5h-2.789V22.008h2.599v10.068zM81.9 29.758c0-5.64 4.273-10.019 9.868-10.019 5.564 0 9.844 4.379 9.844 10.019 0 5.64-4.28 10.019-9.844 10.019-5.595 0-9.868-4.379-9.868-10.019zm17.112 0c0-4.226-3.212-7.516-7.244-7.516-4.061 0-7.268 3.29-7.268 7.516 0 4.226 3.207 7.516 7.268 7.516 4.033 0 7.244-3.29 7.244-7.516zm11.257-7.75h2.599v17.5h-2.599v-17.5zm9.504 10.068l4.685-10.068h2.835l-7.919 17.5h-2.788V22.008h2.599v10.068zm14.02-5.063h7.918v2.502h-7.918v-2.502zm0 7.516h7.918v2.502h-7.918v-2.502zm0-12.52h7.918v2.502h-7.918v-2.502zm0 17.749h7.918v-2.502h-7.918v2.502zm16.907-17.75h2.599v17.5h-2.599v-17.5zm8.951 0h11.4v2.502h-4.4v14.997h-2.6V24.51h-4.4v-2.502zm18.212 17.5h-2.599v-17.5h2.599v17.5z' fill='%23003D79'/%3E%3C/svg%3E" alt="Mandiri" class="h-8">
+                    </div>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-gray-400">Atas Nama:</p>
+                    <p class="font-bold mb-4">HAWA PUTRI</p>
+                    <div class="flex items-center mb-2">
+                        <p class="font-mono bg-gray-100 dark:bg-gray-700 flex-1 p-3 rounded-lg mr-2 text-lg select-all">0987654321</p>
+                        <button class="copy-button bg-primary text-white p-3 rounded-lg" onclick="copyToClipboard('0987654321')">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div id="mandiri-copied" class="hidden text-green-600 text-sm mt-2 text-center">
+                        <i class="fas fa-check-circle mr-1"></i> Nomor rekening disalin!
+                    </div>
+                </div>
+            </div>
+        </section>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 dark:text-gray-400">Setiap doa dan restu yang diberikan akan menjadi berkah dalam kehidupan pernikahan kami.</p>
+                <p class="text-primary mt-2">Terima kasih.</p>
+            </div>
+        </div>
+    </section>
+
+        <!-- Blog/Tutorial Section -->
+        <section id="blog" class="py-16 transition-colors duration-300">
+            <div class="container mx-auto px-4 md:px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Blog & Tutorial</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-light-card dark:bg-dark-card rounded-lg overflow-hidden shadow hover:shadow-md transition-shadow">
+                        <div class="h-40 bg-gradient-to-r from-blue-500 to-primary flex items-center justify-center text-white text-5xl">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs font-semibold inline-block py-1 px-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 mb-3">React</span>
+                            <h3 class="text-xl font-semibold mb-2">
+                                <a href="#" class="hover:text-primary transition-colors">Membangun UI Reaktif dengan React Hooks</a>
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                                Tutorial step-by-step untuk menggunakan React Hooks secara efektif dalam membangun interface yang dinamis.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500 dark:text-gray-400">
+                                    <i class="fa-regular fa-calendar mr-1"></i> 15 Mei 2023
+                                </span>
+                                <a href="#" class="text-primary hover:underline text-sm font-medium">Baca Selengkapnya</a>
+                            </div>
+                        </div>
+    <!-- RSVP Section -->
+    <section id="rsvp" class="py-20 px-4 bg-secondary dark:bg-gray-900 relative overflow-hidden scroll-section">
+        <div class="container mx-auto max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="font-script text-4xl md:text-5xl text-primary mb-3">Konfirmasi Kehadiran</h2>
+                <div class="floral-divider">
+                    <span class="inline-block text-primary"><i class="fas fa-envelope-open-text"></i></span>
+                </div>
+                <p class="max-w-2xl mx-auto mt-6 text-gray-600 dark:text-gray-400">Kehadiran Anda adalah suatu kehormatan dan kebahagiaan bagi kami. Mohon konfirmasi kehadiran Anda melalui form di bawah ini.</p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                <form id="rsvpForm" class="space-y-6">
+                    <div>
+                        <label for="name" class="block mb-2 text-sm font-medium">Nama Lengkap</label>
+                        <input type="text" id="name" class="w-full px-4 py-3 border rounded-lg bg-gray-50 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-base focus:ring-2 focus:ring-primary focus:border-primary" required>
+                    </div>
+
+                    <div class="bg-light-card dark:bg-dark-card rounded-lg overflow-hidden shadow hover:shadow-md transition-shadow">
+                        <div class="h-40 bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center text-white text-5xl">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs font-semibold inline-block py-1 px-2 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300 mb-3">Node.js</span>
+                            <h3 class="text-xl font-semibold mb-2">
+                                <a href="#" class="hover:text-primary transition-colors">Arsitektur Mikroservis dengan Node.js dan Docker</a>
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                                Panduan praktis untuk membangun, men-deploy, dan menskalakan aplikasi menggunakan arsitektur mikroservis.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500 dark:text-gray-400">
+                                    <i class="fa-regular fa-calendar mr-1"></i> 3 April 2023
+                                </span>
+                                <a href="#" class="text-primary hover:underline text-sm font-medium">Baca Selengkapnya</a>
+                            </div>
+                        </div>
+                    <div>
+                        <label for="phone" class="block mb-2 text-sm font-medium">Nomor Telepon</label>
+                        <input type="tel" id="phone" class="w-full px-4 py-3 border rounded-lg bg-gray-50 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-base focus:ring-2 focus:ring-primary focus:border-primary" required>
+                    </div>
+
+                    <div class="bg-light-card dark:bg-dark-card rounded-lg overflow-hidden shadow hover:shadow-md transition-shadow">
+                        <div class="h-40 bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white text-5xl">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs font-semibold inline-block py-1 px-2 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 mb-3">Database</span>
+                            <h3 class="text-xl font-semibold mb-2">
+                                <a href="#" class="hover:text-primary transition-colors">Optimasi Query NoSQL untuk Aplikasi Skala Besar</a>
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                                Teknik dan strategi optimasi query MongoDB untuk menangani jutaan data dengan performa tinggi.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500 dark:text-gray-400">
+                                    <i class="fa-regular fa-calendar mr-1"></i> 20 Februari 2023
+                                </span>
+                                <a href="#" class="text-primary hover:underline text-sm font-medium">Baca Selengkapnya</a>
+                            </div>
+                    <div>
+                        <label for="guests" class="block mb-2 text-sm font-medium">Jumlah Tamu</label>
+                        <select id="guests" class="w-full px-4 py-3 border rounded-lg bg-gray-50 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-base focus:ring-2 focus:ring-primary focus:border-primary">
+                            <option value="1">1 Orang</option>
+                            <option value="2">2 Orang</option>
+                            <option value="3">3 Orang</option>
+                            <option value="4">4 Orang</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block mb-2 text-sm font-medium">Konfirmasi Kehadiran</label>
+                        <div class="flex flex-col md:flex-row md:space-x-6 space-y-3 md:space-y-0">
+                            <label class="flex items-center">
+                                <input type="radio" name="attendance" value="yes" class="w-4 h-4 text-primary focus:ring-primary" checked>
+                                <span class="ml-2">Ya, Saya Akan Hadir</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="attendance" value="no" class="w-4 h-4 text-primary focus:ring-primary">
+                                <span class="ml-2">Maaf, Saya Tidak Bisa Hadir</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                    
+                    <div>
+                        <label for="message" class="block mb-2 text-sm font-medium">Ucapan & Doa</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-3 border rounded-lg bg-gray-50 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-base focus:ring-2 focus:ring-primary focus:border-primary"></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="inline-block bg-primary text-white px-8 py-4 rounded-full text-lg hover:bg-primary/90 transition-colors shadow-lg">Kirim Konfirmasi</button>
+                    </div>
+                </form>
+
+                <div class="text-center mt-12">
+                    <a href="#" class="inline-flex items-center px-6 py-3 border border-primary text-primary font-medium rounded-lg hover:bg-primary hover:text-white transition-colors">
+                        Lihat Semua Artikel
+                        <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                <div id="rsvpSuccess" class="hidden mt-6 p-4 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-100 rounded-lg text-center">
+                    Terima kasih atas konfirmasi Anda! Kami sangat menantikan kehadiran Anda pada hari bahagia kami.
+                </div>
+            </div>
+        </section>
+        </div>
+    </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-light-card dark:bg-dark-card transition-colors duration-300">
+            <div class="container mx-auto px-4 md:px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Hubungi Saya</h2>
+    <!-- Ucapan Section -->
+    <section class="py-20 px-4 relative overflow-hidden">
+        <div class="container mx-auto max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="font-script text-4xl md:text-5xl text-primary mb-3">Ucapan & Doa</h2>
+                <div class="floral-divider">
+                    <span class="inline-block text-primary"><i class="fas fa-comments"></i></span>
+                </div>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- Sample wishes -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex-shrink-0 flex items-center justify-center">
+                            <span class="text-primary font-bold">A</span>
+                        </div>
+                        <div>
+                            <div class="font-bold">Ahmad Rizky</div>
+                            <div class="text-gray-600 dark:text-gray-400 text-sm mb-2">15 Okt 2024</div>
+                            <p>Selamat menempuh hidup baru, semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Aamiin YRA.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">Tertarik untuk berkolaborasi?</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-6">
+                            Saya selalu terbuka untuk mendiskusikan proyek baru atau peluang kerja. Hubungi saya melalui formulir di samping atau melalui platform media sosial berikut.
+                        </p>
+                        
+                        <div class="flex flex-col space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <span>email@example.com</span>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <span>Jakarta, Indonesia</span>
+                            </div>
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex-shrink-0 flex items-center justify-center">
+                            <span class="text-primary font-bold">D</span>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-semibold mb-4">Temukan saya di:</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                                    <i class="fa-brands fa-gitlab"></i>
+                                </a>
+                            </div>
+                        <div>
+                            <div class="font-bold">Dina Permata</div>
+                            <div class="text-gray-600 dark:text-gray-400 text-sm mb-2">14 Okt 2024</div>
+                            <p>Barakallahu lakuma wa baraka 'alaikuma wa jama'a bainakuma fii khair. Semoga pernikahan kalian penuh cinta dan bahagia selalu.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-dark-bg p-6 rounded-lg shadow-sm">
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-1">Nama</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-800 dark:text-white text-base" required>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-800 dark:text-white text-base" required>
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium mb-1">Subjek</label>
+                                <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-800 dark:text-white text-base" required>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium mb-1">Pesan</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-800 dark:text-white text-base" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-indigo-600 transition-colors">
+                                Kirim Pesan
+                            </button>
+                        </form>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex-shrink-0 flex items-center justify-center">
+                            <span class="text-primary font-bold">B</span>
+                        </div>
+                        <div>
+                            <div class="font-bold">Budi Santoso</div>
+                            <div class="text-gray-600 dark:text-gray-400 text-sm mb-2">12 Okt 2024</div>
+                            <p>Selamat menempuh hidup baru! Semoga menjadi pasangan yang selalu bersyukur dan bahagia selamanya. Insya Allah saya akan hadir.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 bg-gray-900 text-white">
+            <div class="text-center text-gray-400">
+                <p>&copy;2025. All rights reserved.</p>
+            
+            <div class="mt-8 text-center">
+                <a href="#rsvp" class="inline-block bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-colors shadow-lg">
+                    <i class="fas fa-pen-fancy mr-2"></i>Tulis Ucapan
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 px-4 bg-gray-900 text-white relative overflow-hidden">
+        <div class="container mx-auto text-center">
+            <h2 class="font-script text-4xl text-primary mb-6">Adam & Hawa</h2>
+            <p class="mb-8 max-w-lg mx-auto">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kami.</p>
+            <p class="text-xl mb-4">Sabtu, 15 November 2024</p>
+            <div class="w-20 h-1 bg-primary/30 rounded-full mx-auto my-6"></div>
+            <p class="text-sm text-gray-400 mt-8">Made with <i class="fas fa-heart text-primary"></i> for Adam & Hawa</p>
+        </div>
+    </footer>
+    
+    <a href="#" id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg transform translate-y-20 opacity-0 transition-all duration-300">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- Fixed Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <div class="flex flex-col space-y-3">
+            <a href="#home" class="w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center text-primary hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+            <a href="https://wa.me/?text=Hai%2C%20kami%20mengundang%20Anda%20ke%20pernikahan%20kami%3A%20Adam%20%26%20Hawa.%20Sabtu%2C%2015%20November%202024%20di%20The%20Ritz-Carlton%20Jakarta.%20Informasi%20selengkapnya%20di%20%5BLINK%20UNDANGAN%5D" target="_blank" class="w-12 h-12 rounded-full bg-primary shadow-lg flex items-center justify-center text-white hover:bg-primary/90 transition-all">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        // Check for dark mode preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        
+        // Listen for changes in color scheme preference
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+        // Countdown timer
+        function updateCountdown() {
+            const weddingDate = new Date('November 15, 2024 08:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = weddingDate - now;
+            
+            if (timeLeft < 0) {
+                document.getElementById('days').innerHTML = '00';
+                document.getElementById('hours').innerHTML = '00';
+                document.getElementById('minutes').innerHTML = '00';
+                document.getElementById('seconds').innerHTML = '00';
+                return;
+            }
         });
+        
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+        
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Back to top button
+        const backToTop = document.getElementById('back-to-top');
+            
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+        }
 
-        // Handle navigation scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('translate-y-20', 'opacity-0');
+                backToTop.classList.add('translate-y-0', 'opacity-100');
+            } else {
+                backToTop.classList.remove('translate-y-0', 'opacity-100');
+                backToTop.classList.add('translate-y-20', 'opacity-0');
+            }
+        });
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+        // Smooth scrolling for all internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 
-                // Close mobile menu if open
-                document.getElementById('mobileMenu').classList.add('hidden');
-                
                 const targetId = this.getAttribute('href');
-                
                 if (targetId === '#') return;
                 
                 const targetElement = document.querySelector(targetId);
-                
                 if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                    targetElement.scrollIntoView({
                         behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Back to top button
-        const backToTopButton = document.getElementById('backToTop');
+        // Contact form
+        const contactForm = document.getElementById('contact-form');
         
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.replace('translate-y-20', 'translate-y-0');
-                backToTopButton.classList.replace('opacity-0', 'opacity-100');
-            } else {
-                backToTopButton.classList.replace('translate-y-0', 'translate-y-20');
-                backToTopButton.classList.replace('opacity-100', 'opacity-0');
+        contactForm.addEventListener('submit', (e) => {
+        // RSVP form submission
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Replace with actual form submission logic or API call
+            const formData = new FormData(contactForm);
+            const formValues = Object.fromEntries(formData.entries());
+            // Normally you would send the form data to a server here
+            // For this demo, we'll just show the success message
+
+            // Simple validation
+            let valid = true;
+            for (const key in formValues) {
+                if (!formValues[key].trim()) {
+                    valid = false;
+                    break;
+                }
             }
-        });
-        
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            document.getElementById('rsvpSuccess').classList.remove('hidden');
+            document.getElementById('rsvpForm').reset();
+
+            if (valid) {
+                // In a real app, you would submit to a server here
+                alert('Pesan telah dikirim! Terima kasih.');
+                contactForm.reset();
+            } else {
+                alert('Silakan isi semua field yang diperlukan.');
+            }
+            // Hide the success message after 5 seconds
+            setTimeout(function() {
+                document.getElementById('rsvpSuccess').classList.add('hidden');
+            }, 5000);
         });
 
-        // Order modal functionality
-        const orderModal = document.getElementById('orderModal');
-        const orderButtons = [
-            document.getElementById('orderNowBtn'),
-            document.getElementById('heroOrderBtn'),
-            document.getElementById('ctaOrderBtn')
-        ];
-        const closeModalBtn = document.getElementById('closeModalBtn');
+        // Generate GitHub contribution chart
+        const contributionGraph = document.getElementById('github-contributions');
+        const weeks = 52;
+        const daysPerWeek = 7;
         
-        orderButtons.forEach(button => {
-            if (button) {
-                button.addEventListener('click', () => {
-                    orderModal.classList.remove('hidden');
-                    document.body.style.overflow = 'hidden';
-                });
+        // Generate random contribution data
+        for (let week = 0; week < weeks; week++) {
+            for (let day = 0; day < daysPerWeek; day++) {
+                const intensity = Math.floor(Math.random() * 5); // 0-4 for intensity levels
+                
+                const cell = document.createElement('div');
+                cell.className = 'contribution-cell';
+                
+                // Set color based on intensity
+                let bgColor = '';
+                if (intensity === 0) {
+                    bgColor = 'bg-gray-200 dark:bg-gray-700';
+                } else if (intensity === 1) {
+                    bgColor = 'bg-green-200 dark:bg-green-900';
+                } else if (intensity === 2) {
+                    bgColor = 'bg-green-300 dark:bg-green-800';
+                } else if (intensity === 3) {
+                    bgColor = 'bg-green-400 dark:bg-green-700';
+                } else {
+                    bgColor = 'bg-green-500 dark:bg-green-600';
+                }
+                
+                cell.classList.add(...bgColor.split(' '));
+                
+                // Add tooltip with data (in a real app, this would be actual dates and commit counts)
+                const date = new Date();
+                date.setDate(date.getDate() - ((weeks - week) * 7 + (daysPerWeek - day)));
+                
+                const tooltip = `${intensity} contributions on ${date.toLocaleDateString()}`;
+                cell.setAttribute('title', tooltip);
+                
+                contributionGraph.appendChild(cell);
             }
-        });
+        }
         
-        document.querySelectorAll('.product-card button').forEach(button => {
-            button.addEventListener('click', () => {
-                orderModal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
+        // Animate skill bars on scroll
+        const animateSkillBars = () => {
+            const skillBars = document.querySelectorAll('.progress');
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            // Create a temporary input element
+            const input = document.createElement('input');
+            input.setAttribute('value', text);
+            document.body.appendChild(input);
+
+            skillBars.forEach(bar => {
+                const targetWidth = bar.style.width;
+                bar.style.width = '0%';
                 
-                // Get product info from the card
-                const card = button.closest('.product-card');
-                const productName = card.querySelector('h4').textContent;
-                
-                // Find the corresponding option in the dropdown
-                const select = document.getElementById('product');
-                Array.from(select.options).forEach(option => {
-                    if (option.text.includes(productName.trim())) {
-                        option.selected = true;
-                    }
-                });
+            // Select the text
+            input.select();
+            input.setSelectionRange(0, 99999); // For mobile devices
+            
+            // Copy the text to clipboard
+            document.execCommand('copy');
+            
+            // Remove the temporary element
+            document.body.removeChild(input);
+            
+            // Show copied message
+            if (text === '1234567890') {
+                document.getElementById('bca-copied').classList.remove('hidden');
+                setTimeout(() => {
+                    bar.style.width = targetWidth;
+                }, 300);
             });
-        });
+        };
         
-        closeModalBtn.addEventListener('click', () => {
-            orderModal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        });
+        // Create intersection observer for skills section
+        const skillsSection = document.getElementById('skills');
         
-        // Click outside to close
-        orderModal.addEventListener('click', (e) => {
-            if (e.target === orderModal) {
-                orderModal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        observer.observe(skillsSection);
+                    document.getElementById('bca-copied').classList.add('hidden');
+                }, 2000);
+            } else if (text === '0987654321') {
+                document.getElementById('mandiri-copied').classList.remove('hidden');
+                setTimeout(() => {
+                    document.getElementById('mandiri-copied').classList.add('hidden');
+                }, 2000);
             }
-        });
-        
-        // Quantity buttons
-        document.getElementById('decreaseQty').addEventListener('click', () => {
-            const quantityInput = document.getElementById('quantity');
-            if (parseInt(quantityInput.value) > 1) {
-                quantityInput.value = parseInt(quantityInput.value) - 1;
-            }
-        });
-        
-        document.getElementById('increaseQty').addEventListener('click', () => {
-            const quantityInput = document.getElementById('quantity');
-            quantityInput.value = parseInt(quantityInput.value) + 1;
-        });
+        }
     </script>
 </body>
 </html>
